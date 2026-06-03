@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>American Exceptionablism</title>
+<meta name="description" content="Six moves. Every national myth runs on them. A KMK Themenfeld unit for Abitur 2027–29.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Mono:wght@300;400;500&family=DM+Sans:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:        #0c0b09;
+    --bg2:       #121109;
+    --surface:   #1a1810;
+    --border:    rgba(200,170,100,0.12);
+    --border-hi: rgba(200,170,100,0.25);
+    --text:      #e8e0cc;
+    --text-dim:  #7a7060;
+    --text-mid:  #b0a880;
+    --gold:      #c8a040;
+    --gold-dim:  rgba(200,160,64,0.08);
+    --red:       #8b2500;
+    --red-dim:   rgba(139,37,0,0.12);
+
+    --serif: 'Libre Baskerville', Georgia, serif;
+    --mono:  'DM Mono', monospace;
+    --sans:  'DM Sans', system-ui, sans-serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--serif);
+    font-size: 15px;
+    line-height: 1.65;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* ── GRAIN ── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.08'/%3E%3C/svg%3E");
+    background-size: 200px 200px;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.6;
+    mix-blend-mode: overlay;
+  }
+
+  /* ── MASTHEAD ── */
+  .masthead {
+    position: relative;
+    z-index: 1;
+    border-bottom: 1px solid var(--border);
+    padding: clamp(3rem, 8vw, 6rem) clamp(1.5rem, 5vw, 4rem) clamp(2.5rem, 5vw, 4rem);
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .masthead-eyebrow {
+    font-family: var(--mono);
+    font-size: 9.5px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .masthead-eyebrow::before {
+    content: '';
+    display: block;
+    width: 24px;
+    height: 1px;
+    background: var(--gold);
+    flex-shrink: 0;
+  }
+
+  .masthead-title {
+    font-family: var(--serif);
+    font-size: clamp(2.8rem, 7vw, 5.5rem);
+    font-weight: 700;
+    line-height: 1.0;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    margin-bottom: 0.4rem;
+  }
+
+  .masthead-title em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--text-mid);
+  }
+
+  .masthead-pun {
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 0.12em;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    margin-bottom: 2.5rem;
+    margin-top: 0.5rem;
+  }
+
+  .masthead-rule {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: clamp(1rem, 2.2vw, 1.25rem);
+    color: var(--text-mid);
+    line-height: 1.55;
+    max-width: 54ch;
+    margin-bottom: 2rem;
+    font-weight: 400;
+  }
+
+  .masthead-rule strong {
+    color: var(--text);
+    font-style: normal;
+    font-weight: 700;
+  }
+
+  .masthead-meta {
+    font-family: var(--mono);
+    font-size: 9.5px;
+    letter-spacing: 0.1em;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .masthead-meta span { display: flex; align-items: center; gap: 0.4rem; }
+  .masthead-meta span::before { content: '—'; }
+
+  /* ── SECTION HEADING ── */
+  .section-head {
+    position: relative;
+    z-index: 1;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: clamp(2rem, 4vw, 3rem) clamp(1.5rem, 5vw, 4rem) 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .section-head-label {
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    white-space: nowrap;
+  }
+
+  .section-head::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  /* ── PLAYBOOK GRID ── */
+  .playbook-grid {
+    position: relative;
+    z-index: 1;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 clamp(1.5rem, 5vw, 4rem) clamp(1rem, 3vw, 2rem);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+
+  .play-card {
+    background: var(--bg2);
+    padding: 1.5rem 1.75rem;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.2s;
+  }
+
+  .play-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 2px;
+    background: transparent;
+    transition: background 0.2s;
+  }
+
+  .play-card:hover { background: var(--surface); }
+  .play-card:hover::before { background: var(--gold); }
+
+  .play-number {
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.6rem;
+  }
+
+  .play-name {
+    font-family: var(--serif);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 0.35rem;
+    line-height: 1.2;
+  }
+
+  .play-tagline {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 0.82rem;
+    color: var(--text-dim);
+    margin-bottom: 0.85rem;
+    line-height: 1.4;
+  }
+
+  .play-desc {
+    font-family: var(--sans);
+    font-size: 12px;
+    font-weight: 300;
+    color: var(--text-mid);
+    line-height: 1.65;
+  }
+
+  .play-signal {
+    display: inline-block;
+    margin-top: 0.85rem;
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 0.08em;
+    color: var(--text-dim);
+    border-left: 2px solid var(--border-hi);
+    padding-left: 0.6rem;
+    font-style: italic;
+    line-height: 1.5;
+  }
+
+  /* Play 6 — Mirror — spans full width on its own */
+  .play-card.mirror {
+    grid-column: 1 / -1;
+    background: var(--red-dim);
+    border-left: 3px solid var(--red);
+  }
+
+  .play-card.mirror:hover { background: rgba(139,37,0,0.18); }
+  .play-card.mirror:hover::before { background: var(--red); }
+  .play-card.mirror .play-number { color: #c84020; }
+  .play-card.mirror .play-name { color: var(--text); }
+
+  /* ── THE RULE ── */
+  .rule-bar {
+    position: relative;
+    z-index: 1;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 clamp(1.5rem, 5vw, 4rem);
+  }
+
+  .rule-block {
+    border: 1px solid var(--border-hi);
+    border-left: 3px solid var(--gold);
+    background: var(--gold-dim);
+    padding: 1.1rem 1.5rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .rule-label {
+    font-family: var(--mono);
+    font-size: 8.5px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    flex-shrink: 0;
+    padding-top: 2px;
+  }
+
+  .rule-text {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 0.9rem;
+    color: var(--text-mid);
+    line-height: 1.6;
+  }
+
+  .rule-text strong {
+    font-style: normal;
+    color: var(--text);
+  }
+
+  /* ── INSTRUMENTS ── */
+  .instruments-grid {
+    position: relative;
+    z-index: 1;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 clamp(1.5rem, 5vw, 4rem) clamp(2rem, 4vw, 3rem);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    margin-top: 0;
+  }
+
+  .instrument-card {
+    background: var(--bg2);
+    padding: 1.75rem 1.85rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+    transition: background 0.18s;
+  }
+
+  .instrument-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px; height: 100%;
+    background: transparent;
+    transition: background 0.18s;
+  }
+
+  .instrument-card:hover { background: var(--surface); }
+  .instrument-card:hover::before { background: var(--gold); }
+
+  .instrument-card.soon {
+    opacity: 0.45;
+    pointer-events: none;
+  }
+
+  .instrument-phase {
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+  }
+
+  .instrument-name {
+    font-family: var(--serif);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text);
+    line-height: 1.2;
+  }
+
+  .instrument-desc {
+    font-family: var(--sans);
+    font-size: 12.5px;
+    font-weight: 300;
+    color: var(--text-mid);
+    line-height: 1.65;
+    flex: 1;
+  }
+
+  .instrument-meta {
+    font-family: var(--mono);
+    font-size: 9px;
+    color: var(--text-dim);
+    letter-spacing: 0.06em;
+    border-top: 1px solid var(--border);
+    padding-top: 0.75rem;
+    margin-top: auto;
+  }
+
+  .instrument-arrow {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--gold);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-top: 0.25rem;
+  }
+
+  /* ── CORPUS NOTE ── */
+  .corpus-note {
+    position: relative;
+    z-index: 1;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: clamp(2rem, 4vw, 3rem) clamp(1.5rem, 5vw, 4rem);
+    border-top: 1px solid var(--border);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(2rem, 4vw, 4rem);
+  }
+
+  .corpus-col h3 {
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin-bottom: 1rem;
+  }
+
+  .corpus-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+  }
+
+  .corpus-list li {
+    font-family: var(--sans);
+    font-size: 12px;
+    font-weight: 300;
+    color: var(--text-mid);
+    line-height: 1.5;
+    display: flex;
+    gap: 0.6rem;
+    align-items: baseline;
+  }
+
+  .corpus-list li::before {
+    content: '—';
+    color: var(--text-dim);
+    flex-shrink: 0;
+    font-family: var(--mono);
+    font-size: 10px;
+  }
+
+  .corpus-list li strong {
+    color: var(--text);
+    font-weight: 400;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    position: relative;
+    z-index: 1;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 1.5rem clamp(1.5rem, 5vw, 4rem);
+    border-top: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .footer-left {
+    font-family: var(--mono);
+    font-size: 9.5px;
+    color: var(--text-dim);
+    letter-spacing: 0.06em;
+  }
+
+  .footer-left strong { color: var(--text-mid); font-weight: 400; }
+
+  .footer-right {
+    font-family: var(--mono);
+    font-size: 9px;
+    color: var(--text-dim);
+    letter-spacing: 0.06em;
+    font-style: italic;
+  }
+
+  /* ── MOBILE ── */
+  @media (max-width: 640px) {
+    .corpus-note { grid-template-columns: 1fr; }
+    .playbook-grid { grid-template-columns: 1fr; }
+    .instruments-grid { grid-template-columns: 1fr; }
+    .play-card.mirror { grid-column: 1; }
+  }
+
+  /* ── REDUCED MOTION ── */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { transition: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<!-- MASTHEAD -->
+<div class="masthead">
+  <div class="masthead-eyebrow">KMK Themenfeld · Abitur 2027–29 · DSP Prague</div>
+  <h1 class="masthead-title">American<br><em>Exceptionablism</em></h1>
+  <p class="masthead-pun">exceptionable · adj. · open to objection</p>
+  <p class="masthead-rule">
+    Every nation has a playbook. A set of moves that protect the national story from scrutiny.
+    America's makes <strong>the biggest claim in history</strong> — and has the most to hide.
+    This unit teaches you to read the playbook. Not to hate America.
+    To understand how national mythology works — <em>everywhere, including where you are standing.</em>
+  </p>
+  <div class="masthead-meta">
+    <span>Six plays</span>
+    <span>Six phases</span>
+    <span>One rule</span>
+  </div>
+</div>
+
+<!-- THE PLAYBOOK -->
+<div class="section-head">
+  <span class="section-head-label">The Playbook</span>
+</div>
+
+<div class="playbook-grid">
+
+  <div class="play-card">
+    <div class="play-number">Play 1</div>
+    <div class="play-name">The Origin Story</div>
+    <div class="play-tagline">The move that establishes the claim.</div>
+    <p class="play-desc">Every exceptional nation needs a founding myth — pure, heroic, chosen. The genius of the American version is that it encodes the aspiration directly into the founding documents, so any gap between ideal and reality can always be framed as a failure of people, not of the system.</p>
+    <span class="play-signal">"We hold these truths to be self-evident"</span>
+  </div>
+
+  <div class="play-card">
+    <div class="play-number">Play 2</div>
+    <div class="play-name">The Necessary Exclusion</div>
+    <div class="play-tagline">The myth requires someone outside it.</div>
+    <p class="play-desc">The freedom of some is produced by the unfreedom of others. This is not an accident or a failure of implementation — it is structural. The Dream requires someone who cannot access it. The founding contradiction is not a bug. It is a feature.</p>
+    <span class="play-signal">"They didn't mean people like us"</span>
+  </div>
+
+  <div class="play-card">
+    <div class="play-number">Play 3</div>
+    <div class="play-name">The Erasure</div>
+    <div class="play-tagline">The move that maintains the story against the facts.</div>
+    <p class="play-desc">Evidence that contradicts the myth disappears, is minimised, or is reframed as exceptional rather than systemic. Each instance of the contradiction is treated as an exception. The accumulation of exceptions is never allowed to become a pattern.</p>
+    <span class="play-signal">"This was an isolated incident"</span>
+  </div>
+
+  <div class="play-card">
+    <div class="play-number">Play 4</div>
+    <div class="play-name">The Backlash</div>
+    <div class="play-tagline">Dissent becomes disloyalty.</div>
+    <p class="play-desc">When the Necessary Exclusion becomes visible, the Playbook shifts to direct suppression. The Backlash does not engage with the critique on its merits. It reframes the challenge as an attack — and crucially, it borrows the language of the Origin Story to do so.</p>
+    <span class="play-signal">"This is not who we are" / "They are trying to destroy our way of life"</span>
+  </div>
+
+  <div class="play-card">
+    <div class="play-number">Play 5</div>
+    <div class="play-name">The Co-optation</div>
+    <div class="play-tagline">The wound becomes the product.</div>
+    <p class="play-desc">When the Backlash fails, the Playbook absorbs the critique. The language of the challenge is adopted by the myth. The style survives. The structural argument does not. This is the most dangerous Play because it is invisible.</p>
+    <span class="play-signal">"We hear you" / [brand logo in protest colours]</span>
+  </div>
+
+  <div class="play-card mirror">
+    <div class="play-number">Play 6</div>
+    <div class="play-name">The Mirror</div>
+    <div class="play-tagline">The same playbook, running closer to home.</div>
+    <p class="play-desc">You have now learned to identify Plays 1–5 in American history. Play 6 requires you to identify them in Europe. Not to prove Europe is worse than America, or better. To prove the Playbook is not American. It is what nations do. The question this unit ends on is: <em>what does it take to stop playing?</em></p>
+    <span class="play-signal">"We're different"</span>
+  </div>
+
+</div>
+
+<!-- THE RULE -->
+<div class="rule-bar">
+  <div class="rule-block">
+    <span class="rule-label">The Rule</span>
+    <span class="rule-text"><strong>Every Play you identify in American history must be turned toward Europe.</strong> The Playbook does not belong to America.</span>
+  </div>
+</div>
+
+<!-- INSTRUMENTS -->
+<div class="section-head" style="margin-top: clamp(1.5rem, 3vw, 2.5rem);">
+  <span class="section-head-label">Instruments</span>
+</div>
+
+<div class="instruments-grid">
+
+  <a href="https://justinsteinmetz.github.io/AE-sort/" target="_blank" rel="noopener noreferrer" class="instrument-card">
+    <div class="instrument-phase">Phases 2–3</div>
+    <div class="instrument-name">Document Sorter</div>
+    <p class="instrument-desc">Eighteen primary source excerpts. No labels, no dates, no context — yet. Sort them into groups. Name the groups. Then find out what they are.</p>
+    <div class="instrument-meta">Encomienda grants · redlining maps · corporate DEI · land acknowledgements · 1496–2021</div>
+    <div class="instrument-arrow">Open →</div>
+  </a>
+
+  <a href="https://justinsteinmetz.github.io/AE-stress/" target="_blank" rel="noopener noreferrer" class="instrument-card">
+    <div class="instrument-phase">Phases 4–5</div>
+    <div class="instrument-name">Stress-Tester</div>
+    <p class="instrument-desc">The Playbook under pressure. Each case gives you evidence that confirms the framework and evidence that troubles it. Which Play is running? Does the framework hold?</p>
+    <div class="instrument-meta">Case-based · identify the Play · confirm and trouble</div>
+    <div class="instrument-arrow">Open →</div>
+  </a>
+
+  <a href="https://justinsteinmetz.github.io/AE-testimony/" target="_blank" rel="noopener noreferrer" class="instrument-card">
+    <div class="instrument-phase">Phases 2–4</div>
+    <div class="instrument-name">Testimony Sorter</div>
+    <p class="instrument-desc">Primary voices, one at a time. Read. Place. Reconsider. The testimony does not wait for you to be ready.</p>
+    <div class="instrument-meta">Quote-by-quote · slow reading · placement and revision</div>
+    <div class="instrument-arrow">Open →</div>
+  </a>
+
+</div>
+
+<!-- CORPUS NOTE -->
+<div class="corpus-note">
+  <div class="corpus-col">
+    <h3>Primary Voices</h3>
+    <ul class="corpus-list">
+      <li><strong>Baldwin</strong> — The Fire Next Time</li>
+      <li><strong>King</strong> — Letter from Birmingham Jail</li>
+      <li><strong>Coates</strong> — Reparations · BTWAM · Eight Years · The Message</li>
+      <li><strong>Simpson</strong> — As We Have Always Done</li>
+      <li><strong>Dunbar-Ortiz</strong> — An Indigenous Peoples' History</li>
+      <li><strong>Anzaldúa</strong> — Borderlands / La Frontera</li>
+      <li><strong>Orange</strong> — There There (Prologue)</li>
+      <li><strong>Lorde</strong> — Sister Outsider</li>
+      <li><strong>Du Mez</strong> — Jesus and John Wayne</li>
+      <li><strong>Nguyen</strong> — The Beautiful, Flawed Fiction</li>
+      <li><strong>Bayoumi</strong> — How Does It Feel to Be a Problem?</li>
+      <li><strong>Questlove</strong> — Hip-Hop Is History</li>
+    </ul>
+  </div>
+  <div class="corpus-col">
+    <h3>Affirmative Anchors · Historical</h3>
+    <ul class="corpus-list">
+      <li><strong>Lincoln</strong> — Second Inaugural Address (1865)</li>
+      <li><strong>Lazarus</strong> — The New Colossus (1883)</li>
+      <li><strong>King</strong> — Letter from Birmingham Jail (1963)</li>
+      <li><strong>Obama</strong> — 2004 DNC Keynote</li>
+    </ul>
+    <h3 style="margin-top: 1.5rem;">Contemporary Frame</h3>
+    <ul class="corpus-list">
+      <li><strong>Kagan</strong> — American Democracy / Checkmate in Iran (2025–26)</li>
+      <li><strong>Serwer</strong> — Democracy Is a Racial Entitlement Now (2026)</li>
+      <li><strong>King Charles III</strong> — Address to Joint Congress (April 2026)</li>
+      <li><strong>V-Dem data</strong> — US reclassified: liberal → electoral democracy</li>
+    </ul>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-left">
+    <strong>Deutsche Schule Prag</strong> · English Department · Abitur 2027–29
+  </div>
+  <div class="footer-right">Every nation has a playbook. The question is what it takes to stop playing.</div>
+</footer>
+
+</body>
+</html>
