@@ -116,8 +116,8 @@
     font-style: italic;
     font-size: clamp(1rem, 2.2vw, 1.25rem);
     color: var(--text-mid);
-    line-height: 1.55;
-    max-width: 54ch;
+    line-height: 1.65;
+    max-width: 52ch;
     margin-bottom: 2rem;
     font-weight: 400;
   }
@@ -186,7 +186,7 @@
 
   .play-card {
     background: var(--bg2);
-    padding: 1.5rem 1.75rem;
+    padding: 1.4rem 1.6rem;
     position: relative;
     overflow: hidden;
     transition: background 0.2s;
@@ -210,24 +210,24 @@
     letter-spacing: 0.18em;
     text-transform: uppercase;
     color: var(--gold);
-    margin-bottom: 0.6rem;
+    margin-bottom: 0.5rem;
   }
 
   .play-name {
     font-family: var(--serif);
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     font-weight: 700;
     color: var(--text);
-    margin-bottom: 0.35rem;
+    margin-bottom: 0.2rem;
     line-height: 1.2;
   }
 
   .play-tagline {
     font-family: var(--serif);
     font-style: italic;
-    font-size: 0.82rem;
+    font-size: 0.8rem;
     color: var(--text-dim);
-    margin-bottom: 0.85rem;
+    margin-bottom: 0.75rem;
     line-height: 1.4;
   }
 
@@ -236,12 +236,28 @@
     font-size: 12px;
     font-weight: 300;
     color: var(--text-mid);
-    line-height: 1.65;
+    line-height: 1.6;
+  }
+
+  .play-example {
+    font-family: var(--sans);
+    font-size: 11.5px;
+    font-weight: 300;
+    color: var(--text-dim);
+    line-height: 1.55;
+    margin-top: 0.6rem;
+    padding-top: 0.6rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .play-example em {
+    color: var(--text-mid);
+    font-style: normal;
   }
 
   .play-signal {
     display: inline-block;
-    margin-top: 0.85rem;
+    margin-top: 0.75rem;
     font-family: var(--mono);
     font-size: 9px;
     letter-spacing: 0.08em;
@@ -252,7 +268,50 @@
     line-height: 1.5;
   }
 
-  /* Play 6 — Mirror — spans full width on its own */
+  /* ── PLAY 3 ERASURE — the card that enacts its subject ── */
+  .play-card.erasure {
+    position: relative;
+  }
+
+  /* Redacted block — sits over the example text */
+  .redacted-block {
+    position: relative;
+    margin-top: 0.6rem;
+    padding-top: 0.6rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .redacted-line {
+    font-family: var(--sans);
+    font-size: 11.5px;
+    font-weight: 300;
+    color: transparent;
+    background: var(--text-dim);
+    border-radius: 1px;
+    user-select: none;
+    line-height: 1;
+    display: block;
+    margin-bottom: 5px;
+    position: relative;
+  }
+
+  /* Different widths for visual realism */
+  .redacted-line:nth-child(1) { width: 92%; height: 11px; }
+  .redacted-line:nth-child(2) { width: 78%; height: 11px; }
+  .redacted-line:nth-child(3) { width: 85%; height: 11px; }
+  .redacted-line:nth-child(4) { width: 40%; height: 11px; }
+
+  .redacted-label {
+    font-family: var(--mono);
+    font-size: 8px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin-top: 0.55rem;
+    opacity: 0.6;
+  }
+
+  /* Play 6 — Mirror — spans full width */
   .play-card.mirror {
     grid-column: 1 / -1;
     background: var(--red-dim);
@@ -263,6 +322,27 @@
   .play-card.mirror:hover::before { background: var(--red); }
   .play-card.mirror .play-number { color: #c84020; }
   .play-card.mirror .play-name { color: var(--text); }
+
+  /* Mirror inner layout — two-column on wide screens */
+  .mirror-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: start;
+  }
+
+  @media (max-width: 640px) {
+    .mirror-inner { grid-template-columns: 1fr; gap: 1rem; }
+  }
+
+  .mirror-question {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--text-mid);
+    line-height: 1.6;
+    margin-top: 0.85rem;
+  }
 
   /* ── THE RULE ── */
   .rule-bar {
@@ -345,11 +425,6 @@
 
   .instrument-card:hover { background: var(--surface); }
   .instrument-card:hover::before { background: var(--gold); }
-
-  .instrument-card.soon {
-    opacity: 0.45;
-    pointer-events: none;
-  }
 
   .instrument-phase {
     font-family: var(--mono);
@@ -502,10 +577,9 @@
   <h1 class="masthead-title">American<br><em>Exceptionablism</em></h1>
   <p class="masthead-pun">exceptionable · adj. · open to objection</p>
   <p class="masthead-rule">
-    Every nation has a playbook. A set of moves that protect the national story from scrutiny.
-    America's makes <strong>the biggest claim in history</strong> — and has the most to hide.
-    This unit teaches you to read the playbook. Not to hate America.
-    To understand how national mythology works — <em>everywhere, including where you are standing.</em>
+    America may be <strong>the most successful national story ever told.</strong>
+    This unit asks what it costs to maintain it —
+    and where the same story is running <em>closer to home.</em>
   </p>
   <div class="masthead-meta">
     <span>Six plays</span>
@@ -521,52 +595,77 @@
 
 <div class="playbook-grid">
 
+  <!-- PLAY 1 -->
   <div class="play-card">
     <div class="play-number">Play 1</div>
     <div class="play-name">The Origin Story</div>
     <div class="play-tagline">The move that establishes the claim.</div>
-    <p class="play-desc">Every exceptional nation needs a founding myth — pure, heroic, chosen. The genius of the American version is that it encodes the aspiration directly into the founding documents, so any gap between ideal and reality can always be framed as a failure of people, not of the system.</p>
+    <p class="play-desc">Every exceptional nation encodes its aspiration into its founding — so any gap between ideal and reality can always be framed as a failure of people, not of the system.</p>
+    <div class="play-example"><em>Jefferson writes that all men are created equal. Jefferson enslaves over 600 people across his lifetime. The system survives by treating this as irony rather than structure.</em></div>
     <span class="play-signal">"We hold these truths to be self-evident"</span>
   </div>
 
+  <!-- PLAY 2 -->
   <div class="play-card">
     <div class="play-number">Play 2</div>
     <div class="play-name">The Necessary Exclusion</div>
     <div class="play-tagline">The myth requires someone outside it.</div>
-    <p class="play-desc">The freedom of some is produced by the unfreedom of others. This is not an accident or a failure of implementation — it is structural. The Dream requires someone who cannot access it. The founding contradiction is not a bug. It is a feature.</p>
+    <p class="play-desc">The freedom of some is produced by the unfreedom of others. The Dream requires someone who cannot access it. The founding contradiction is not a bug. It is a feature.</p>
+    <div class="play-example"><em>The GI Bill rebuilt the American middle class after 1945. Black veterans were systematically denied its benefits. The gap in wealth it created has not closed.</em></div>
     <span class="play-signal">"They didn't mean people like us"</span>
   </div>
 
-  <div class="play-card">
+  <!-- PLAY 3 — ERASURE — enacted in the form -->
+  <div class="play-card erasure">
     <div class="play-number">Play 3</div>
     <div class="play-name">The Erasure</div>
     <div class="play-tagline">The move that maintains the story against the facts.</div>
-    <p class="play-desc">Evidence that contradicts the myth disappears, is minimised, or is reframed as exceptional rather than systemic. Each instance of the contradiction is treated as an exception. The accumulation of exceptions is never allowed to become a pattern.</p>
+    <p class="play-desc">Evidence that contradicts the myth disappears, is minimised, or is reframed as exceptional. Each instance of the contradiction is treated as an isolated incident. The accumulation of exceptions is never allowed to become a pattern.</p>
+    <div class="redacted-block" title="This content has been removed.">
+      <span class="redacted-line"></span>
+      <span class="redacted-line"></span>
+      <span class="redacted-line"></span>
+      <span class="redacted-line"></span>
+      <div class="redacted-label">This content has been removed.</div>
+    </div>
     <span class="play-signal">"This was an isolated incident"</span>
   </div>
 
+  <!-- PLAY 4 -->
   <div class="play-card">
     <div class="play-number">Play 4</div>
     <div class="play-name">The Backlash</div>
     <div class="play-tagline">Dissent becomes disloyalty.</div>
-    <p class="play-desc">When the Necessary Exclusion becomes visible, the Playbook shifts to direct suppression. The Backlash does not engage with the critique on its merits. It reframes the challenge as an attack — and crucially, it borrows the language of the Origin Story to do so.</p>
+    <p class="play-desc">When the Necessary Exclusion becomes visible, the Playbook shifts to direct suppression. The Backlash does not engage with the critique. It reframes the challenge as an attack — using the language of the Origin Story to do so.</p>
+    <div class="play-example"><em>The Backlash is not triggered by Black failure. It is triggered by Black success. Du Bois: "If there was one thing that South Carolina feared more than bad Negro government, it was good Negro government."</em></div>
     <span class="play-signal">"This is not who we are" / "They are trying to destroy our way of life"</span>
   </div>
 
+  <!-- PLAY 5 -->
   <div class="play-card">
     <div class="play-number">Play 5</div>
     <div class="play-name">The Co-optation</div>
     <div class="play-tagline">The wound becomes the product.</div>
     <p class="play-desc">When the Backlash fails, the Playbook absorbs the critique. The language of the challenge is adopted by the myth. The style survives. The structural argument does not. This is the most dangerous Play because it is invisible.</p>
+    <div class="play-example"><em>Chuck D, 1988: hip hop is the CNN of Black people. By 1997: "more famous, less powerful." Run-DMC's authenticity becomes the Adidas deal. The wound becomes a brand.</em></div>
     <span class="play-signal">"We hear you" / [brand logo in protest colours]</span>
   </div>
 
+  <!-- PLAY 6 — MIRROR — full width -->
   <div class="play-card mirror">
     <div class="play-number">Play 6</div>
     <div class="play-name">The Mirror</div>
     <div class="play-tagline">The same playbook, running closer to home.</div>
-    <p class="play-desc">You have now learned to identify Plays 1–5 in American history. Play 6 requires you to identify them in Europe. Not to prove Europe is worse than America, or better. To prove the Playbook is not American. It is what nations do. The question this unit ends on is: <em>what does it take to stop playing?</em></p>
-    <span class="play-signal">"We're different"</span>
+    <div class="mirror-inner">
+      <div>
+        <p class="play-desc">You have learned to identify Plays 1–5 in American history. Play 6 requires you to identify them in Europe. Not to prove Europe is worse. To prove the Playbook is not American.</p>
+        <p class="mirror-question">Brexit. The Windrush generation. France's laïcité. Orbán. Vance in Budapest, April 2026. <em>Where does this Play run — and what is it protecting?</em></p>
+      </div>
+      <div>
+        <p class="play-desc" style="color: var(--text-dim); font-style: italic;">It is what nations do. The question is not which nation plays it worst. The question is what it takes to stop playing.</p>
+        <span class="play-signal" style="margin-top: 1rem;">"We're different"</span>
+      </div>
+    </div>
   </div>
 
 </div>
@@ -632,7 +731,7 @@
     </ul>
   </div>
   <div class="corpus-col">
-    <h3>Affirmative Anchors · Historical</h3>
+    <h3>Affirmative Anchors</h3>
     <ul class="corpus-list">
       <li><strong>Lincoln</strong> — Second Inaugural Address (1865)</li>
       <li><strong>Lazarus</strong> — The New Colossus (1883)</li>
