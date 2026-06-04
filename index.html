@@ -3,599 +3,273 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>American Exceptionablism</title>
+<title>American Exceptionablism — DSP Prague</title>
 <meta name="description" content="Six moves. Every national myth runs on them. A KMK Themenfeld unit for Abitur 2027–29.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Mono:wght@300;400;500&family=DM+Sans:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Mono:wght@300;400;500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;1,9..40,300&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --bg:        #0c0b09;
-    --bg2:       #121109;
-    --surface:   #1a1810;
-    --border:    rgba(200,170,100,0.12);
-    --border-hi: rgba(200,170,100,0.25);
-    --text:      #e8e0cc;
-    --text-dim:  #7a7060;
-    --text-mid:  #b0a880;
-    --gold:      #c8a040;
-    --gold-dim:  rgba(200,160,64,0.08);
-    --red:       #8b2500;
-    --red-dim:   rgba(139,37,0,0.12);
-
-    --serif: 'Libre Baskerville', Georgia, serif;
-    --mono:  'DM Mono', monospace;
-    --sans:  'DM Sans', system-ui, sans-serif;
-  }
-
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
-
-  body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: var(--serif);
-    font-size: 15px;
-    line-height: 1.65;
-    min-height: 100vh;
-    overflow-x: hidden;
-  }
-
-  /* ── GRAIN ── */
-  body::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.08'/%3E%3C/svg%3E");
-    background-size: 200px 200px;
-    pointer-events: none;
-    z-index: 0;
-    opacity: 0.6;
-    mix-blend-mode: overlay;
-  }
-
-  /* ── MASTHEAD ── */
-  .masthead {
-    position: relative;
-    z-index: 1;
-    border-bottom: 1px solid var(--border);
-    padding: clamp(3rem, 8vw, 6rem) clamp(1.5rem, 5vw, 4rem) clamp(2.5rem, 5vw, 4rem);
-    max-width: 1100px;
-    margin: 0 auto;
-  }
-
-  .masthead-eyebrow {
-    font-family: var(--mono);
-    font-size: 9.5px;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 2rem;
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-  }
-
-  .masthead-eyebrow::before {
-    content: '';
-    display: block;
-    width: 24px;
-    height: 1px;
-    background: var(--gold);
-    flex-shrink: 0;
-  }
-
-  .masthead-title {
-    font-family: var(--serif);
-    font-size: clamp(2.8rem, 7vw, 5.5rem);
-    font-weight: 700;
-    line-height: 1.0;
-    letter-spacing: -0.02em;
-    color: var(--text);
-    margin-bottom: 0.4rem;
-  }
-
-  .masthead-title em {
-    font-style: italic;
-    font-weight: 400;
-    color: var(--text-mid);
-  }
-
-  .masthead-pun {
-    font-family: var(--mono);
-    font-size: 9px;
-    letter-spacing: 0.12em;
-    color: var(--text-dim);
-    text-transform: uppercase;
-    margin-bottom: 2.5rem;
-    margin-top: 0.5rem;
-  }
-
-  .masthead-rule {
-    font-family: var(--serif);
-    font-style: italic;
-    font-size: clamp(1rem, 2.2vw, 1.25rem);
-    color: var(--text-mid);
-    line-height: 1.65;
-    max-width: 52ch;
-    margin-bottom: 2rem;
-    font-weight: 400;
-  }
-
-  .masthead-rule strong {
-    color: var(--text);
-    font-style: normal;
-    font-weight: 700;
-  }
-
-  .masthead-meta {
-    font-family: var(--mono);
-    font-size: 9.5px;
-    letter-spacing: 0.1em;
-    color: var(--text-dim);
-    text-transform: uppercase;
-    display: flex;
-    gap: 1.5rem;
-    flex-wrap: wrap;
-  }
-
-  .masthead-meta span { display: flex; align-items: center; gap: 0.4rem; }
-  .masthead-meta span::before { content: '—'; }
-
-  /* ── SECTION HEADING ── */
-  .section-head {
-    position: relative;
-    z-index: 1;
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: clamp(2rem, 4vw, 3rem) clamp(1.5rem, 5vw, 4rem) 0.75rem;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-  }
-
-  .section-head-label {
-    font-family: var(--mono);
-    font-size: 9px;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--text-dim);
-    white-space: nowrap;
-  }
-
-  .section-head::after {
-    content: '';
-    flex: 1;
-    height: 1px;
-    background: var(--border);
-  }
-
-  /* ── PLAYBOOK GRID ── */
-  .playbook-grid {
-    position: relative;
-    z-index: 1;
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 clamp(1.5rem, 5vw, 4rem) clamp(1rem, 3vw, 2rem);
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1px;
-    background: var(--border);
-    border: 1px solid var(--border);
-  }
-
-  .play-card {
-    background: var(--bg2);
-    padding: 1.4rem 1.6rem;
-    position: relative;
-    overflow: hidden;
-    transition: background 0.2s;
-  }
-
-  .play-card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 2px;
-    background: transparent;
-    transition: background 0.2s;
-  }
-
-  .play-card:hover { background: var(--surface); }
-  .play-card:hover::before { background: var(--gold); }
-
-  .play-number {
-    font-family: var(--mono);
-    font-size: 9px;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 0.5rem;
-  }
-
-  .play-name {
-    font-family: var(--serif);
-    font-size: 1.05rem;
-    font-weight: 700;
-    color: var(--text);
-    margin-bottom: 0.2rem;
-    line-height: 1.2;
-  }
-
-  .play-tagline {
-    font-family: var(--serif);
-    font-style: italic;
-    font-size: 0.8rem;
-    color: var(--text-dim);
-    margin-bottom: 0.75rem;
-    line-height: 1.4;
-  }
-
-  .play-desc {
-    font-family: var(--sans);
-    font-size: 12px;
-    font-weight: 300;
-    color: var(--text-mid);
-    line-height: 1.6;
-  }
-
-  .play-example {
-    font-family: var(--sans);
-    font-size: 11.5px;
-    font-weight: 300;
-    color: var(--text-dim);
-    line-height: 1.55;
-    margin-top: 0.6rem;
-    padding-top: 0.6rem;
-    border-top: 1px solid var(--border);
-  }
-
-  .play-example em {
-    color: var(--text-mid);
-    font-style: normal;
-  }
-
-  .play-signal {
-    display: inline-block;
-    margin-top: 0.75rem;
-    font-family: var(--mono);
-    font-size: 9px;
-    letter-spacing: 0.08em;
-    color: var(--text-dim);
-    border-left: 2px solid var(--border-hi);
-    padding-left: 0.6rem;
-    font-style: italic;
-    line-height: 1.5;
-  }
-
-  /* ── PLAY 3 ERASURE — the card that enacts its subject ── */
-  .play-card.erasure {
-    position: relative;
-  }
-
-  /* Redacted block — sits over the example text */
-  .redacted-block {
-    position: relative;
-    margin-top: 0.6rem;
-    padding-top: 0.6rem;
-    border-top: 1px solid var(--border);
-  }
-
-  .redacted-line {
-    font-family: var(--sans);
-    font-size: 11.5px;
-    font-weight: 300;
-    color: transparent;
-    background: var(--text-dim);
-    border-radius: 1px;
-    user-select: none;
-    line-height: 1;
-    display: block;
-    margin-bottom: 5px;
-    position: relative;
-  }
-
-  /* Different widths for visual realism */
-  .redacted-line:nth-child(1) { width: 92%; height: 11px; }
-  .redacted-line:nth-child(2) { width: 78%; height: 11px; }
-  .redacted-line:nth-child(3) { width: 85%; height: 11px; }
-  .redacted-line:nth-child(4) { width: 40%; height: 11px; }
-
-  .redacted-label {
-    font-family: var(--mono);
-    font-size: 8px;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--text-dim);
-    margin-top: 0.55rem;
-    opacity: 0.6;
-  }
-
-  /* Play 6 — Mirror — spans full width */
-  .play-card.mirror {
-    grid-column: 1 / -1;
-    background: var(--red-dim);
-    border-left: 3px solid var(--red);
-  }
-
-  .play-card.mirror:hover { background: rgba(139,37,0,0.18); }
-  .play-card.mirror:hover::before { background: var(--red); }
-  .play-card.mirror .play-number { color: #c84020; }
-  .play-card.mirror .play-name { color: var(--text); }
-
-  /* Mirror inner layout — two-column on wide screens */
-  .mirror-inner {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    align-items: start;
-  }
-
-  @media (max-width: 640px) {
-    .mirror-inner { grid-template-columns: 1fr; gap: 1rem; }
-  }
-
-  .mirror-question {
-    font-family: var(--serif);
-    font-style: italic;
-    font-size: 1rem;
-    color: var(--text-mid);
-    line-height: 1.6;
-    margin-top: 0.85rem;
-  }
-
-  /* ── THE RULE ── */
-  .rule-bar {
-    position: relative;
-    z-index: 1;
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 clamp(1.5rem, 5vw, 4rem);
-  }
-
-  .rule-block {
-    border: 1px solid var(--border-hi);
-    border-left: 3px solid var(--gold);
-    background: var(--gold-dim);
-    padding: 1.1rem 1.5rem;
-    display: flex;
-    align-items: flex-start;
-    gap: 1rem;
-    margin-top: 1rem;
-  }
-
-  .rule-label {
-    font-family: var(--mono);
-    font-size: 8.5px;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--gold);
-    flex-shrink: 0;
-    padding-top: 2px;
-  }
-
-  .rule-text {
-    font-family: var(--serif);
-    font-style: italic;
-    font-size: 0.9rem;
-    color: var(--text-mid);
-    line-height: 1.6;
-  }
-
-  .rule-text strong {
-    font-style: normal;
-    color: var(--text);
-  }
-
-  /* ── INSTRUMENTS ── */
-  .instruments-grid {
-    position: relative;
-    z-index: 1;
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 clamp(1.5rem, 5vw, 4rem) clamp(2rem, 4vw, 3rem);
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1px;
-    background: var(--border);
-    border: 1px solid var(--border);
-    margin-top: 0;
-  }
-
-  .instrument-card {
-    background: var(--bg2);
-    padding: 1.75rem 1.85rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.9rem;
-    position: relative;
-    overflow: hidden;
-    text-decoration: none;
-    transition: background 0.18s;
-  }
-
-  .instrument-card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0;
-    width: 3px; height: 100%;
-    background: transparent;
-    transition: background 0.18s;
-  }
-
-  .instrument-card:hover { background: var(--surface); }
-  .instrument-card:hover::before { background: var(--gold); }
-
-  .instrument-phase {
-    font-family: var(--mono);
-    font-size: 9px;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--text-dim);
-  }
-
-  .instrument-name {
-    font-family: var(--serif);
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: var(--text);
-    line-height: 1.2;
-  }
-
-  .instrument-desc {
-    font-family: var(--sans);
-    font-size: 12.5px;
-    font-weight: 300;
-    color: var(--text-mid);
-    line-height: 1.65;
-    flex: 1;
-  }
-
-  .instrument-meta {
-    font-family: var(--mono);
-    font-size: 9px;
-    color: var(--text-dim);
-    letter-spacing: 0.06em;
-    border-top: 1px solid var(--border);
-    padding-top: 0.75rem;
-    margin-top: auto;
-  }
-
-  .instrument-arrow {
-    font-family: var(--mono);
-    font-size: 10px;
-    color: var(--gold);
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    margin-top: 0.25rem;
-  }
-
-  /* ── CORPUS NOTE ── */
-  .corpus-note {
-    position: relative;
-    z-index: 1;
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: clamp(2rem, 4vw, 3rem) clamp(1.5rem, 5vw, 4rem);
-    border-top: 1px solid var(--border);
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: clamp(2rem, 4vw, 4rem);
-  }
-
-  .corpus-col h3 {
-    font-family: var(--mono);
-    font-size: 9px;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--text-dim);
-    margin-bottom: 1rem;
-  }
-
-  .corpus-list {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 0.45rem;
-  }
-
-  .corpus-list li {
-    font-family: var(--sans);
-    font-size: 12px;
-    font-weight: 300;
-    color: var(--text-mid);
-    line-height: 1.5;
-    display: flex;
-    gap: 0.6rem;
-    align-items: baseline;
-  }
-
-  .corpus-list li::before {
-    content: '—';
-    color: var(--text-dim);
-    flex-shrink: 0;
-    font-family: var(--mono);
-    font-size: 10px;
-  }
-
-  .corpus-list li strong {
-    color: var(--text);
-    font-weight: 400;
-  }
-
-  /* ── FOOTER ── */
-  footer {
-    position: relative;
-    z-index: 1;
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 1.5rem clamp(1.5rem, 5vw, 4rem);
-    border-top: 1px solid var(--border);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 0.75rem;
-  }
-
-  .footer-left {
-    font-family: var(--mono);
-    font-size: 9.5px;
-    color: var(--text-dim);
-    letter-spacing: 0.06em;
-  }
-
-  .footer-left strong { color: var(--text-mid); font-weight: 400; }
-
-  .footer-right {
-    font-family: var(--mono);
-    font-size: 9px;
-    color: var(--text-dim);
-    letter-spacing: 0.06em;
-    font-style: italic;
-  }
-
-  /* ── MOBILE ── */
-  @media (max-width: 640px) {
-    .corpus-note { grid-template-columns: 1fr; }
-    .playbook-grid { grid-template-columns: 1fr; }
-    .instruments-grid { grid-template-columns: 1fr; }
-    .play-card.mirror { grid-column: 1; }
-  }
-
-  /* ── REDUCED MOTION ── */
-  @media (prefers-reduced-motion: reduce) {
-    *, *::before, *::after { transition: none !important; }
-  }
+:root {
+  --bg: #0c0b09; --bg2: #111009; --surface: #1a1810; --surface2: #201e14;
+  --border: rgba(200,170,100,0.11); --border-hi: rgba(200,170,100,0.24);
+  --text: #e8e0cc; --text-dim: #7a7060; --text-mid: #b0a880;
+  --gold: #c8a040; --gold-dim: rgba(200,160,64,0.07); --gold-hi: rgba(200,160,64,0.15);
+  --red: #8b2500; --red-dim: rgba(139,37,0,0.10); --red-hi: rgba(139,37,0,0.20);
+  --serif: 'Libre Baskerville', Georgia, serif;
+  --mono: 'DM Mono', monospace;
+  --sans: 'DM Sans', system-ui, sans-serif;
+  --max: 1120px; --pad: clamp(1.5rem, 5vw, 4rem);
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--text); font-family: var(--serif); font-size: 15px; line-height: 1.65; min-height: 100vh; overflow-x: hidden; }
+body::before { content: ''; position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.08'/%3E%3C/svg%3E"); background-size: 200px 200px; pointer-events: none; z-index: 0; opacity: 0.55; mix-blend-mode: overlay; }
+
+.back-link { position: relative; z-index: 10; display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.9rem var(--pad); font-family: var(--mono); font-size: 9px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--text-dim); text-decoration: none; border-bottom: 1px solid var(--border); width: 100%; transition: color 0.15s; }
+.back-link:hover { color: var(--gold); }
+.back-link::before { content: '←'; font-size: 11px; }
+
+.wrap { position: relative; z-index: 1; max-width: var(--max); margin: 0 auto; padding-left: var(--pad); padding-right: var(--pad); }
+
+.section-head { position: relative; z-index: 1; max-width: var(--max); margin: 0 auto; padding: clamp(2.5rem, 5vw, 4rem) var(--pad) 0.85rem; display: flex; align-items: center; gap: 1rem; }
+.section-head-label { font-family: var(--mono); font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--text-dim); white-space: nowrap; }
+.section-head::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+/* MASTHEAD */
+.masthead { position: relative; z-index: 1; border-bottom: 1px solid var(--border); padding: clamp(3rem, 8vw, 6.5rem) var(--pad) clamp(2.5rem, 5vw, 4rem); max-width: var(--max); margin: 0 auto; }
+.masthead-eyebrow { font-family: var(--mono); font-size: 9.5px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 2.2rem; display: flex; align-items: center; gap: 0.75rem; }
+.masthead-eyebrow::before { content: ''; display: block; width: 24px; height: 1px; background: var(--gold); flex-shrink: 0; }
+.masthead-title { font-family: var(--serif); font-size: clamp(3rem, 7.5vw, 6rem); font-weight: 700; line-height: 0.95; letter-spacing: -0.02em; color: var(--text); margin-bottom: 0.5rem; }
+.masthead-title em { font-style: italic; font-weight: 400; color: var(--text-mid); }
+.masthead-pun { font-family: var(--mono); font-size: 9px; letter-spacing: 0.12em; color: var(--text-dim); text-transform: uppercase; margin-bottom: 2.5rem; margin-top: 0.6rem; }
+.masthead-rule { font-family: var(--serif); font-style: italic; font-size: clamp(1rem, 2vw, 1.2rem); color: var(--text-mid); line-height: 1.7; max-width: 54ch; margin-bottom: 2.2rem; font-weight: 400; }
+.masthead-rule strong { color: var(--text); font-style: normal; font-weight: 700; }
+.masthead-meta { font-family: var(--mono); font-size: 9.5px; letter-spacing: 0.1em; color: var(--text-dim); text-transform: uppercase; display: flex; gap: 1.5rem; flex-wrap: wrap; }
+.masthead-meta span::before { content: '—'; }
+
+/* CAVEAT — placed early, after masthead */
+.caveat-bar { position: relative; z-index: 1; max-width: var(--max); margin: 0 auto; padding: 0.75rem var(--pad); }
+.caveat-inner { border: 1px solid var(--border-hi); border-left: 3px solid var(--gold); background: var(--gold-dim); padding: 1rem 1.5rem; display: grid; grid-template-columns: auto 1fr; gap: 1rem; align-items: start; }
+.caveat-label { font-family: var(--mono); font-size: 8.5px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); padding-top: 2px; white-space: nowrap; }
+.caveat-text { font-family: var(--serif); font-style: italic; font-size: 0.88rem; color: var(--text-mid); line-height: 1.65; }
+.caveat-text strong { font-style: normal; color: var(--text); }
+
+/* SIX PHASES */
+.shape-grid { position: relative; z-index: 1; max-width: var(--max); margin: 0 auto; padding: 0 var(--pad) clamp(1rem, 2vw, 1.5rem); display: grid; grid-template-columns: repeat(6, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); }
+.shape-card { background: var(--bg2); padding: 1.2rem 1.3rem; position: relative; overflow: hidden; transition: background 0.18s; }
+.shape-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 2px; background: transparent; transition: background 0.18s; }
+.shape-card:hover { background: var(--surface); }
+.shape-card:hover::before { background: var(--gold); }
+.shape-num { font-family: var(--mono); font-size: 8.5px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; }
+.shape-name { font-family: var(--serif); font-size: 0.82rem; font-weight: 700; color: var(--text); line-height: 1.25; margin-bottom: 0.4rem; }
+.shape-q { font-family: var(--sans); font-size: 11px; font-weight: 300; color: var(--text-dim); line-height: 1.55; font-style: italic; }
+
+/* THE CLAIM */
+.claim-grid { position: relative; z-index: 1; max-width: var(--max); margin: 0 auto; padding: 0 var(--pad) 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); }
+.claim-card { background: var(--bg2); padding: 1.5rem 1.6rem; position: relative; overflow: hidden; transition: background 0.18s; border-top: 3px solid var(--gold); }
+.claim-card:hover { background: var(--surface); }
+.claim-year { font-family: var(--mono); font-size: 9px; letter-spacing: 0.14em; color: var(--gold); margin-bottom: 0.5rem; text-transform: uppercase; }
+.claim-who { font-family: var(--serif); font-size: 0.95rem; font-weight: 700; color: var(--text); margin-bottom: 0.3rem; line-height: 1.2; }
+.claim-what { font-family: var(--sans); font-size: 11.5px; font-weight: 300; color: var(--text-mid); line-height: 1.6; margin-bottom: 0.65rem; }
+.claim-quote { font-family: var(--serif); font-style: italic; font-size: 11px; color: var(--text-dim); line-height: 1.6; border-left: 2px solid var(--border-hi); padding-left: 0.75rem; }
+.claim-note { position: relative; z-index: 1; max-width: var(--max); margin: 0 auto; padding: 0.6rem var(--pad) 0; }
+.claim-note-inner { background: var(--gold-dim); border-left: 3px solid var(--gold); padding: 0.9rem 1.2rem; font-family: var(--sans); font-size: 12px; font-weight: 300; color: var(--text-mid); line-height: 1.6; font-style: italic; }
+.claim-note-inner strong { color: var(--text); font-style: normal; font-weight: 400; }
+
+/* PLAYBOOK */
+.playbook-grid { position: relative; z-index: 1; max-width: var(--max); margin: 0 auto; padding: 0 var(--pad) 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(310px, 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); }
+.play-card { background: var(--bg2); padding: 1.45rem 1.6rem; position: relative; overflow: hidden; transition: background 0.2s; }
+.play-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 2px; background: transparent; transition: background 0.2s; }
+.play-card:hover { background: var(--surface); }
+.play-card:hover::before { background: var(--gold); }
+.play-number { font-family: var(--mono); font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; }
+.play-name { font-family: var(--serif); font-size: 1.05rem; font-weight: 700; color: var(--text); margin-bottom: 0.2rem; line-height: 1.2; }
+.play-tagline { font-family: var(--serif); font-style: italic; font-size: 0.8rem; color: var(--text-dim); margin-bottom: 0.75rem; line-height: 1.4; }
+.play-desc { font-family: var(--sans); font-size: 12px; font-weight: 300; color: var(--text-mid); line-height: 1.65; }
+.play-example { font-family: var(--sans); font-size: 11.5px; font-weight: 300; color: var(--text-dim); line-height: 1.55; margin-top: 0.65rem; padding-top: 0.65rem; border-top: 1px solid var(--border); }
+.play-example em { color: var(--text-mid); font-style: normal; }
+.play-signal { display: inline-block; margin-top: 0.75rem; font-family: var(--mono); font-size: 9px; letter-spacing: 0.08em; color: var(--text-dim); border-left: 2px solid var(--border-hi); padding-left: 0.6rem; font-style: italic; line-height: 1.5; }
+
+.play-card.erasure { position: relative; }
+.redacted-block { position: relative; margin-top: 0.65rem; padding-top: 0.65rem; border-top: 1px solid var(--border); }
+.redacted-line { color: transparent; background: var(--text-dim); border-radius: 1px; user-select: none; line-height: 1; display: block; margin-bottom: 5px; }
+.redacted-line:nth-child(1) { width: 92%; height: 11px; }
+.redacted-line:nth-child(2) { width: 78%; height: 11px; }
+.redacted-line:nth-child(3) { width: 85%; height: 11px; }
+.redacted-line:nth-child(4) { width: 40%; height: 11px; }
+.redacted-label { font-family: var(--mono); font-size: 8px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-dim); margin-top: 0.55rem; opacity: 0.6; }
+
+.play-card.mirror { grid-column: 1 / -1; background: var(--red-dim); border-left: 3px solid var(--red); }
+.play-card.mirror:hover { background: var(--red-hi); }
+.play-card.mirror:hover::before { background: var(--red); }
+.play-card.mirror .play-number { color: #c84020; }
+.mirror-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start; }
+.mirror-question { font-family: var(--serif); font-style: italic; font-size: 1rem; color: var(--text-mid); line-height: 1.65; margin-top: 0.85rem; }
+
+.rule-bar { position: relative; z-index: 1; max-width: var(--max); margin: 0 auto; padding: 0.75rem var(--pad); }
+.rule-block { border: 1px solid var(--border-hi); border-left: 3px solid var(--gold); background: var(--gold-dim); padding: 1.1rem 1.5rem; display: flex; align-items: flex-start; gap: 1rem; }
+.rule-label { font-family: var(--mono); font-size: 8.5px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); flex-shrink: 0; padding-top: 2px; }
+.rule-text { font-family: var(--serif); font-style: italic; font-size: 0.9rem; color: var(--text-mid); line-height: 1.6; }
+.rule-text strong { font-style: normal; color: var(--text); }
+
+/* TERRITORIES — 5 cards: 4 specific + 1 framing */
+.territories-grid { position: relative; z-index: 1; max-width: var(--max); margin: 0 auto; padding: 0 var(--pad) 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); }
+.territory-card { background: var(--bg2); padding: 1.4rem 1.5rem; position: relative; overflow: hidden; transition: background 0.18s; }
+.territory-card::before { content: ''; position: absolute; top: 0; left: 0; width: 3px; height: 100%; background: transparent; transition: background 0.18s; }
+.territory-card:hover { background: var(--surface); }
+.territory-card:hover::before { background: var(--gold); }
+.territory-card.framing { background: var(--surface2); }
+.territory-card.framing::before { background: var(--gold); opacity: 0.4; }
+.territory-geo { font-family: var(--mono); font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; }
+.territory-name { font-family: var(--serif); font-size: 0.95rem; font-weight: 700; color: var(--text); margin-bottom: 0.3rem; line-height: 1.25; }
+.territory-source { font-family: var(--mono); font-size: 9px; color: var(--text-dim); margin-bottom: 0.65rem; letter-spacing: 0.05em; }
+.territory-desc { font-family: var(--sans); font-size: 11.5px; font-weight: 300; color: var(--text-mid); line-height: 1.6; }
+.territory-play { font-family: var(--mono); font-size: 9px; letter-spacing: 0.08em; color: var(--text-dim); margin-top: 0.65rem; padding-top: 0.65rem; border-top: 1px solid var(--border); }
+
+/* CONTEMPORARY FRAME NOTE */
+.frame-note { position: relative; z-index: 1; max-width: var(--max); margin: 0 auto; padding: 0.6rem var(--pad) 0; }
+.frame-note-inner { font-family: var(--sans); font-size: 12px; font-weight: 300; color: var(--text-dim); font-style: italic; line-height: 1.65; border-left: 2px solid var(--border-hi); padding-left: 1rem; }
+.frame-note-inner strong { color: var(--text-mid); font-style: normal; }
+
+/* ENCOUNTER */
+.encounter-grid { position: relative; z-index: 1; max-width: var(--max); margin: 0 auto; padding: 0 var(--pad) 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); }
+.encounter-card { background: var(--bg2); padding: 1.3rem 1.4rem; position: relative; overflow: hidden; transition: background 0.18s; }
+.encounter-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 2px; background: transparent; transition: background 0.18s; }
+.encounter-card:hover { background: var(--surface); }
+.encounter-card:hover::before { background: var(--text-dim); }
+.encounter-num { font-family: var(--mono); font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 0.45rem; }
+.encounter-name { font-family: var(--serif); font-size: 0.92rem; font-weight: 700; color: var(--text); margin-bottom: 0.25rem; line-height: 1.3; }
+.encounter-object { font-family: var(--mono); font-size: 9px; color: var(--text-dim); letter-spacing: 0.05em; margin-bottom: 0.55rem; }
+.encounter-prov { font-family: var(--serif); font-style: italic; font-size: 11px; color: var(--text-dim); line-height: 1.55; border-left: 2px solid var(--border); padding-left: 0.6rem; }
+
+/* INSTRUMENTS */
+.instruments-grid { position: relative; z-index: 1; max-width: var(--max); margin: 0 auto; padding: 0 var(--pad) 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); }
+.instrument-card { background: var(--bg2); padding: 1.75rem 1.85rem; display: flex; flex-direction: column; gap: 0.9rem; position: relative; overflow: hidden; text-decoration: none; transition: background 0.18s; }
+.instrument-card::before { content: ''; position: absolute; top: 0; left: 0; width: 3px; height: 100%; background: transparent; transition: background 0.18s; }
+.instrument-card:hover { background: var(--surface); }
+.instrument-card:hover::before { background: var(--gold); }
+.instrument-phase { font-family: var(--mono); font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-dim); }
+.instrument-name { font-family: var(--serif); font-size: 1.25rem; font-weight: 700; color: var(--text); line-height: 1.2; }
+.instrument-desc { font-family: var(--sans); font-size: 12.5px; font-weight: 300; color: var(--text-mid); line-height: 1.65; flex: 1; }
+.instrument-meta { font-family: var(--mono); font-size: 9px; color: var(--text-dim); letter-spacing: 0.06em; border-top: 1px solid var(--border); padding-top: 0.75rem; margin-top: auto; }
+.instrument-arrow { font-family: var(--mono); font-size: 10px; color: var(--gold); letter-spacing: 0.1em; text-transform: uppercase; margin-top: 0.25rem; }
+
+/* FATALISM ANSWERS */
+.answers-grid { position: relative; z-index: 1; max-width: var(--max); margin: 0 auto; padding: 0 var(--pad) 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); }
+.answer-card { background: var(--bg2); padding: 1.3rem 1.4rem; position: relative; transition: background 0.18s; }
+.answer-card:hover { background: var(--surface); }
+.answer-who { font-family: var(--serif); font-size: 0.92rem; font-weight: 700; color: var(--text); margin-bottom: 0.2rem; }
+.answer-source { font-family: var(--mono); font-size: 8.5px; letter-spacing: 0.06em; color: var(--text-dim); margin-bottom: 0.6rem; }
+.answer-text { font-family: var(--serif); font-style: italic; font-size: 11.5px; color: var(--text-mid); line-height: 1.6; }
+.answers-note { position: relative; z-index: 1; max-width: var(--max); margin: 0 auto; padding: 0.6rem var(--pad) 0; }
+.answers-note-inner { font-family: var(--sans); font-size: 12px; font-weight: 300; color: var(--text-dim); font-style: italic; line-height: 1.65; border-left: 2px solid var(--border-hi); padding-left: 1rem; }
+
+/* CORPUS */
+.corpus-note { position: relative; z-index: 1; max-width: var(--max); margin: 0 auto; padding: clamp(2rem, 4vw, 3rem) var(--pad); border-top: 1px solid var(--border); display: grid; grid-template-columns: 1fr 1fr 1fr; gap: clamp(1.5rem, 3vw, 3rem); }
+.corpus-col h3 { font-family: var(--mono); font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 1rem; }
+.corpus-col h3 + h3 { margin-top: 1.5rem; }
+.corpus-list { list-style: none; display: flex; flex-direction: column; gap: 0.4rem; }
+.corpus-list li { font-family: var(--sans); font-size: 11.5px; font-weight: 300; color: var(--text-mid); line-height: 1.5; display: flex; gap: 0.55rem; align-items: baseline; }
+.corpus-list li::before { content: '—'; color: var(--text-dim); flex-shrink: 0; font-family: var(--mono); font-size: 10px; }
+.corpus-list li strong { color: var(--text); font-weight: 400; }
+
+footer { position: relative; z-index: 1; max-width: var(--max); margin: 0 auto; padding: 1.5rem var(--pad); border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.75rem; }
+.footer-left { font-family: var(--mono); font-size: 9.5px; color: var(--text-dim); letter-spacing: 0.06em; }
+.footer-left strong { color: var(--text-mid); font-weight: 400; }
+.footer-right { font-family: var(--mono); font-size: 9px; color: var(--text-dim); letter-spacing: 0.06em; font-style: italic; }
+
+/* spacing helpers */
+.mt-section { margin-top: clamp(1rem, 2vw, 1.5rem); }
+
+@media (max-width: 900px) { .shape-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 700px) { .shape-grid { grid-template-columns: repeat(2, 1fr); } .mirror-inner { grid-template-columns: 1fr; gap: 1rem; } .corpus-note { grid-template-columns: 1fr; } .play-card.mirror { grid-column: 1; } }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; } }
 </style>
 </head>
 <body>
 
+<a href="https://justinsteinmetz.github.io/DSP_English_Hub/" class="back-link">DSP English Hub</a>
+
 <!-- MASTHEAD -->
 <div class="masthead">
-  <div class="masthead-eyebrow">KMK Themenfeld · Abitur 2027–29 · DSP Prague</div>
+  <div class="masthead-eyebrow">KMK Themenfeld · Abitur 2027–29 · DSP Prague · Grades 11–12</div>
   <h1 class="masthead-title">American<br><em>Exceptionablism</em></h1>
-  <p class="masthead-pun">exceptionable · adj. · open to objection</p>
+  <p class="masthead-pun">exceptionable · adj. · open to objection · from the same root as exception</p>
   <p class="masthead-rule">
     America may be <strong>the most successful national story ever told.</strong>
-    This unit asks what it costs to maintain it —
-    and where the same story is running <em>closer to home.</em>
+    This unit asks what it costs to maintain it — and where the same story
+    is running <em>closer to home.</em>
   </p>
   <div class="masthead-meta">
     <span>Six plays</span>
     <span>Six phases</span>
+    <span>Nine encounter lessons</span>
     <span>One rule</span>
   </div>
 </div>
 
-<!-- THE PLAYBOOK -->
-<div class="section-head">
-  <span class="section-head-label">The Playbook</span>
+<!-- CAVEAT — immediately after masthead, before the framework -->
+<div class="caveat-bar">
+  <div class="caveat-inner">
+    <span class="caveat-label">Before you begin</span>
+    <span class="caveat-text">
+      The Playbook describes <strong>structural tendencies, not a conspiracy.</strong>
+      Similar outcomes do not require central coordination. The most powerful forms of domination need no coordination at all — they are the logic of a system, reproduced by millions of ordinary decisions.
+      When you apply the Playbook, you are identifying a pattern, not finding a hidden hand.
+      <strong>A framework that explains everything explains nothing. The Phase 6 essay must identify at least one place where the framework fails.</strong>
+    </span>
+  </div>
 </div>
 
+<!-- SIX PHASES -->
+<div class="section-head"><span class="section-head-label">The Unit — Six Phases</span></div>
+<div class="shape-grid">
+  <div class="shape-card"><div class="shape-num">Phase 1</div><div class="shape-name">The Myth Machine</div><p class="shape-q">What does America claim to be? Why did people believe it?</p></div>
+  <div class="shape-card"><div class="shape-num">Phase 2</div><div class="shape-name">The Founding Contradiction</div><p class="shape-q">What did the claim cost? Who paid?</p></div>
+  <div class="shape-card"><div class="shape-num">Phase 3</div><div class="shape-name">Westward, Into Someone Else's Home</div><p class="shape-q">What was taken? What framework can see what was lost?</p></div>
+  <div class="shape-card"><div class="shape-num">Phase 4</div><div class="shape-name">The American Dream, Priced Out</div><p class="shape-q">Who built the Dream? Who was excluded from it?</p></div>
+  <div class="shape-card"><div class="shape-num">Phase 5</div><div class="shape-name">The Mirror Turns</div><p class="shape-q">Where does the Playbook run in Europe? What is it protecting?</p></div>
+  <div class="shape-card"><div class="shape-num">Phase 6</div><div class="shape-name">Exceptionablism</div><p class="shape-q">What does the framework illuminate? Where does it fail?</p></div>
+</div>
+
+<!-- THE CLAIM -->
+<div class="section-head mt-section"><span class="section-head-label">The Claim — Before the Analysis</span></div>
+<div class="claim-grid">
+  <div class="claim-card">
+    <div class="claim-year">1865</div>
+    <div class="claim-who">Abraham Lincoln</div>
+    <div class="claim-what">Second Inaugural Address — the founding moral claim at its most serious. Written 40 days before assassination, with the war nearly won. No triumphalism. A national sin named by its author.</div>
+    <div class="claim-quote">With malice toward none, with charity for all... let us strive on to finish the work we are in.</div>
+  </div>
+  <div class="claim-card">
+    <div class="claim-year">1883</div>
+    <div class="claim-who">Emma Lazarus</div>
+    <div class="claim-what">The New Colossus — the immigrant claim. Give me your tired, your poor. Written one year after the Chinese Exclusion Act. The promise and its violation were coterminous from the beginning.</div>
+    <div class="claim-quote">Give me your tired, your poor, your huddled masses yearning to breathe free.</div>
+  </div>
+  <div class="claim-card">
+    <div class="claim-year">1963</div>
+    <div class="claim-who">Martin Luther King Jr.</div>
+    <div class="claim-what">Letter from Birmingham Jail — the most powerful immanent critique in American history. King does not reject American exceptionalism. He holds America to it. Written on scraps of paper in a jail cell.</div>
+    <div class="claim-quote">One has a moral responsibility to disobey unjust laws. An unjust law is no law at all.</div>
+  </div>
+  <div class="claim-card">
+    <div class="claim-year">2004</div>
+    <div class="claim-who">Barack Obama</div>
+    <div class="claim-what">2004 DNC Keynote — the contemporary claim at its most persuasive, delivered by the man who becomes its precise test case. Coates's We Were Eight Years in Power is the reckoning this speech requires.</div>
+    <div class="claim-quote">There is not a liberal America and a conservative America — there is the United States of America.</div>
+  </div>
+</div>
+<div class="claim-note">
+  <div class="claim-note-inner">
+    These texts are encountered <strong>before</strong> the framework. The claim must be felt before it is analysed. Students who encounter the critique first will never understand why the gap between promise and reality is a tragedy rather than simply a structural observation.
+  </div>
+</div>
+
+<!-- THE PLAYBOOK -->
+<div class="section-head mt-section"><span class="section-head-label">The Playbook — Six Moves</span></div>
 <div class="playbook-grid">
 
-  <!-- PLAY 1 -->
   <div class="play-card">
     <div class="play-number">Play 1</div>
     <div class="play-name">The Origin Story</div>
@@ -605,22 +279,20 @@
     <span class="play-signal">"We hold these truths to be self-evident"</span>
   </div>
 
-  <!-- PLAY 2 -->
   <div class="play-card">
     <div class="play-number">Play 2</div>
     <div class="play-name">The Necessary Exclusion</div>
     <div class="play-tagline">The myth requires someone outside it.</div>
-    <p class="play-desc">The freedom of some is produced by the unfreedom of others. The Dream requires someone who cannot access it. The founding contradiction is not a bug. It is a feature.</p>
-    <div class="play-example"><em>The GI Bill rebuilt the American middle class after 1945. Black veterans were systematically denied its benefits. The gap in wealth it created has not closed.</em></div>
+    <p class="play-desc">The freedom of some is produced by the unfreedom of others. The position rotates. The requirement does not. The body changes. The mechanism does not.</p>
+    <div class="play-example"><em>The GI Bill rebuilt the American middle class after 1945. Black veterans were systematically denied its benefits. The wealth gap it created has not closed in 80 years.</em></div>
     <span class="play-signal">"They didn't mean people like us"</span>
   </div>
 
-  <!-- PLAY 3 — ERASURE — enacted in the form -->
   <div class="play-card erasure">
     <div class="play-number">Play 3</div>
     <div class="play-name">The Erasure</div>
     <div class="play-tagline">The move that maintains the story against the facts.</div>
-    <p class="play-desc">Evidence that contradicts the myth disappears, is minimised, or is reframed as exceptional. Each instance of the contradiction is treated as an isolated incident. The accumulation of exceptions is never allowed to become a pattern.</p>
+    <p class="play-desc">Evidence that contradicts the myth disappears, is minimised, or is reframed as exceptional. Each instance is treated as an isolated incident. The accumulation of exceptions is never allowed to become a pattern.</p>
     <div class="redacted-block" title="This content has been removed.">
       <span class="redacted-line"></span>
       <span class="redacted-line"></span>
@@ -631,7 +303,6 @@
     <span class="play-signal">"This was an isolated incident"</span>
   </div>
 
-  <!-- PLAY 4 -->
   <div class="play-card">
     <div class="play-number">Play 4</div>
     <div class="play-name">The Backlash</div>
@@ -641,77 +312,153 @@
     <span class="play-signal">"This is not who we are" / "They are trying to destroy our way of life"</span>
   </div>
 
-  <!-- PLAY 5 -->
   <div class="play-card">
-    <div class="play-number">Play 5</div>
+    <div class="play-number">Play 5A / 5B</div>
     <div class="play-name">The Co-optation</div>
-    <div class="play-tagline">The wound becomes the product.</div>
-    <p class="play-desc">When the Backlash fails, the Playbook absorbs the critique. The language of the challenge is adopted by the myth. The style survives. The structural argument does not. This is the most dangerous Play because it is invisible.</p>
-    <div class="play-example"><em>Chuck D, 1988: hip hop is the CNN of Black people. By 1997: "more famous, less powerful." Run-DMC's authenticity becomes the Adidas deal. The wound becomes a brand.</em></div>
-    <span class="play-signal">"We hear you" / [brand logo in protest colours]</span>
+    <div class="play-tagline">The wound becomes the product — or something genuinely changes.</div>
+    <p class="play-desc">When the Backlash fails, the Playbook absorbs the critique. <strong style="font-weight:400; color:var(--text)">5A:</strong> the language survives, the structural argument does not. <strong style="font-weight:400; color:var(--text)">5B:</strong> reform materially redistributes power in durable ways. These are competing interpretations. The evidence decides. Not all inclusion is co-optation.</p>
+    <div class="play-example"><em>Chuck D: hip hop is the CNN of Black people. By 1997: "more famous, less powerful." But legal segregation ended — that was material change. Both things are true simultaneously.</em></div>
+    <span class="play-signal">"We hear you" / "Not all inclusion is co-optation"</span>
   </div>
 
-  <!-- PLAY 6 — MIRROR — full width -->
   <div class="play-card mirror">
     <div class="play-number">Play 6</div>
     <div class="play-name">The Mirror</div>
-    <div class="play-tagline">The same playbook, running closer to home.</div>
+    <div class="play-tagline">The same Playbook, running closer to home.</div>
     <div class="mirror-inner">
       <div>
         <p class="play-desc">You have learned to identify Plays 1–5 in American history. Play 6 requires you to identify them in Europe. Not to prove Europe is worse. To prove the Playbook is not American.</p>
-        <p class="mirror-question">Brexit. The Windrush generation. France's laïcité. Orbán. Vance in Budapest, April 2026. <em>Where does this Play run — and what is it protecting?</em></p>
+        <p class="mirror-question">Brexit. The Windrush generation. France's laïcité. Orbán's Hungary. Vance in Budapest, April 2026. The greengrocer putting the sign in the window. <em>Where does this Play run — and what is it protecting?</em></p>
       </div>
       <div>
         <p class="play-desc" style="color: var(--text-dim); font-style: italic;">It is what nations do. The question is not which nation plays it worst. The question is what it takes to stop playing.</p>
-        <span class="play-signal" style="margin-top: 1rem;">"We're different"</span>
+        <p class="play-desc" style="margin-top: 1rem; color: var(--text-dim);">Mark Carney, Davos, January 2026 — one year into Trump's second term: "We placed the sign in the window. We participated in the rituals." Every nation has a Playbook. The question is what it takes to take the sign down.</p>
+        <span class="play-signal" style="margin-top: 1rem;">"We're different" / "We placed the sign in the window"</span>
       </div>
     </div>
   </div>
 
 </div>
 
-<!-- THE RULE -->
 <div class="rule-bar">
   <div class="rule-block">
     <span class="rule-label">The Rule</span>
-    <span class="rule-text"><strong>Every Play you identify in American history must be turned toward Europe.</strong> The Playbook does not belong to America.</span>
+    <span class="rule-text"><strong>Every Play you identify in American history must be turned toward Europe.</strong> The Playbook does not belong to America. This is not a unit about American pathology. It is a unit about the Western project and the myth structures that sustain it.</span>
   </div>
 </div>
 
-<!-- INSTRUMENTS -->
-<div class="section-head" style="margin-top: clamp(1.5rem, 3vw, 2.5rem);">
-  <span class="section-head-label">Instruments</span>
+<!-- FOUR TERRITORIES + FRAMING -->
+<div class="section-head mt-section"><span class="section-head-label">The Mechanism — Where the Playbook Travels</span></div>
+
+<div class="wrap" style="padding-bottom: 0.75rem;">
+  <p style="font-family: var(--sans); font-size: 12.5px; font-weight: 300; color: var(--text-dim); line-height: 1.7; font-style: italic; max-width: 60ch;">The first three territories emerge from within the American story itself. The fourth extends through the same texts. The fifth is not a territory — it is the structural argument for why the mechanism travels at all.</p>
 </div>
 
-<div class="instruments-grid">
+<div class="territories-grid">
+  <div class="territory-card">
+    <div class="territory-geo">The American Continent</div>
+    <div class="territory-name">Settler colonialism as structure</div>
+    <div class="territory-source">Dunbar-Ortiz · Deloria · Simpson · Orange</div>
+    <p class="territory-desc">The Playbook is not an episode in American history. It is the organising principle. The scalp bounty economy. Terra nullius. Firsting and lasting — the Erasure built into the grammar of historical description itself.</p>
+    <div class="territory-play">Plays 1, 2, 3 — the Playbook as settler colonial infrastructure</div>
+  </div>
+  <div class="territory-card">
+    <div class="territory-geo">The US–Mexico Border</div>
+    <div class="territory-name">The open wound</div>
+    <div class="territory-source">Gloria Anzaldúa — Borderlands / La Frontera</div>
+    <p class="territory-desc">Not a legal line but a bodily experience. The labour cycle, the language that refuses to stay on one side, the identity that refuses the binary the border imposes. The Necessary Exclusion requires a geography.</p>
+    <div class="territory-play">Play 2 — the Exclusion made spatial and bodily</div>
+  </div>
+  <div class="territory-card">
+    <div class="territory-geo">The American City</div>
+    <div class="territory-name">The wealth gap as policy outcome</div>
+    <div class="territory-source">Coates — The Case for Reparations</div>
+    <p class="territory-desc">Redlining. Contract buying. The specific dollar amounts of wealth extracted from specific families on specific streets. The American Dream measured in mortgage denial rates and intergenerational wealth.</p>
+    <div class="territory-play">Plays 3 and 4 in sequence</div>
+  </div>
+  <div class="territory-card">
+    <div class="territory-geo">Palestine</div>
+    <div class="territory-name">Where the corpus goes</div>
+    <div class="territory-source">Said — Orientalism · Coates — The Message</div>
+    <p class="territory-desc">This territory is here because Coates goes there himself in The Message, and Said's knowledge/power apparatus connects the American and Palestinian experiences directly. The corpus follows its primary voices, not a geopolitical agenda.</p>
+    <div class="territory-play">Plays 1 and 3 — terra nullius applied; Origin Story requires prior Erasure</div>
+  </div>
+  <div class="territory-card framing">
+    <div class="territory-geo">The Mechanism</div>
+    <div class="territory-name">Why the Playbook travels</div>
+    <div class="territory-source">Kagan — American Democracy / Checkmate in Iran · 2025–26</div>
+    <p class="territory-desc">Robert Kagan — an architect of American exceptionalism — watches the machine behave in ways he cannot control. His June 2025 piece warns about Iran. By May 2026 it has happened. The machine does not need its operators' intentions. This is what structural tendency means. The Playbook runs whether or not anyone is calling the plays.</p>
+    <div class="territory-play">The mechanism documented by one of its architects — the strongest possible evidence for the structural argument</div>
+  </div>
+</div>
 
+<div class="frame-note">
+  <div class="frame-note-inner">
+    The contemporary frame in this unit — Kagan, Serwer, V-Dem, the Iran campaign — documents events that were still unfolding as this class began. <strong>Some of these documents may look different by the time you encounter them.</strong> That instability is the point. This unit runs alongside events it is designed to analyse. Where you are in that sequence matters to how you read what you read.
+  </div>
+</div>
+
+<!-- ENCOUNTER LESSONS -->
+<div class="section-head mt-section"><span class="section-head-label">Encounter — Before the Framework</span></div>
+<div class="wrap" style="padding-bottom: 0.75rem;">
+  <p style="font-family: var(--sans); font-size: 12.5px; font-weight: 300; color: var(--text-dim); line-height: 1.7; font-style: italic; max-width: 58ch;">Nine conversation lessons. Each built around one object. The Playbook does not arrive until students have spent time inside the specific historical case. The teacher does not synthesise. The lesson does not culminate in a correct answer.</p>
+</div>
+<div class="encounter-grid">
+  <div class="encounter-card"><div class="encounter-num">Lesson 1</div><div class="encounter-name">The Sign in the Window</div><div class="encounter-object">Havel via Carney · Davos · January 2026</div><div class="encounter-prov">What signs do you put in the window?</div></div>
+  <div class="encounter-card"><div class="encounter-num">Lesson 2</div><div class="encounter-name">This Was Just a Test</div><div class="encounter-object">Tommy Orange — There There prologue</div><div class="encounter-prov">Name something you have seen so many times you stopped seeing it.</div></div>
+  <div class="encounter-card"><div class="encounter-num">Lesson 3</div><div class="encounter-name">What Does This Person Want?</div><div class="encounter-object">Lincoln — Second Inaugural, read cold</div><div class="encounter-prov">Is this a hopeful speech or a grief speech? Can it be both?</div></div>
+  <div class="encounter-card"><div class="encounter-num">Lesson 4</div><div class="encounter-name">The Map and the House</div><div class="encounter-object">HOLC redlining map · assessors' notes · 1938</div><div class="encounter-prov">This map was made by people doing their jobs. What does that mean?</div></div>
+  <div class="encounter-card"><div class="encounter-num">Lesson 5</div><div class="encounter-name">What Comedy Knows</div><div class="encounter-object">Richard Pryor — Live on the Sunset Strip · 1982</div><div class="encounter-prov">Is there something you can only say as a joke?</div></div>
+  <div class="encounter-card"><div class="encounter-num">Lesson 6</div><div class="encounter-name">The Greengrocer's Interior</div><div class="encounter-object">Václav Havel — The Power of the Powerless · 1978</div><div class="encounter-prov">Are you living within any lies right now?</div></div>
+  <div class="encounter-card"><div class="encounter-num">Lesson 7</div><div class="encounter-name">The Practices</div><div class="encounter-object">Leanne Simpson — Binoojiinh and the maple sugar</div><div class="encounter-prov">What do you know that you did not learn in a classroom?</div></div>
+  <div class="encounter-card"><div class="encounter-num">Lesson 8</div><div class="encounter-name">The Framework and You</div><div class="encounter-object">Self-awareness note · what the framework costs</div><div class="encounter-prov">What would it mean to hold this framework lightly?</div></div>
+  <div class="encounter-card"><div class="encounter-num">Lesson 9</div><div class="encounter-name">The Same Thing?</div><div class="encounter-object">Columbus log 1492 · HOLC assessors' notes 1938 · side by side</div><div class="encounter-prov">What would it change — practically, not analytically — if these were the same thing?</div></div>
+</div>
+
+<!-- INSTRUMENTS -->
+<div class="section-head mt-section"><span class="section-head-label">Instruments — Analytical Tools</span></div>
+<div class="instruments-grid">
   <a href="https://justinsteinmetz.github.io/AE-sort/" target="_blank" rel="noopener noreferrer" class="instrument-card">
     <div class="instrument-phase">Phases 2–3</div>
     <div class="instrument-name">Document Sorter</div>
-    <p class="instrument-desc">Eighteen primary source excerpts. No labels, no dates, no context — yet. Sort them into groups. Name the groups. Then find out what they are.</p>
-    <div class="instrument-meta">Encomienda grants · redlining maps · corporate DEI · land acknowledgements · 1496–2021</div>
+    <p class="instrument-desc">Eighteen primary source excerpts. No labels, no dates, no context — yet. Drag them into groups. Name the groups yourself. Then find out what they are and revise.</p>
+    <div class="instrument-meta">Encomienda grants · HOLC redlining · corporate DEI · land acknowledgements · scalp bounties · 1492–2021</div>
     <div class="instrument-arrow">Open →</div>
   </a>
-
   <a href="https://justinsteinmetz.github.io/AE-stress/" target="_blank" rel="noopener noreferrer" class="instrument-card">
     <div class="instrument-phase">Phases 4–5</div>
     <div class="instrument-name">Stress-Tester</div>
-    <p class="instrument-desc">The Playbook under pressure. Each case gives you evidence that confirms the framework and evidence that troubles it. Which Play is running? Does the framework hold?</p>
-    <div class="instrument-meta">Case-based · identify the Play · confirm and trouble</div>
+    <p class="instrument-desc">Five historical cases. For each: argue co-optation (5A), argue transformation (5B), weigh the evidence, position yourself on the spectrum. See where the class lands. The framework must be able to lose.</p>
+    <div class="instrument-meta">Civil Rights Act · marriage equality · Obama presidency · land acknowledgements · corporate DEI</div>
     <div class="instrument-arrow">Open →</div>
   </a>
-
   <a href="https://justinsteinmetz.github.io/AE-testimony/" target="_blank" rel="noopener noreferrer" class="instrument-card">
     <div class="instrument-phase">Phases 2–4</div>
     <div class="instrument-name">Testimony Sorter</div>
-    <p class="instrument-desc">Primary voices, one at a time. Read. Place. Reconsider. The testimony does not wait for you to be ready.</p>
-    <div class="instrument-meta">Quote-by-quote · slow reading · placement and revision</div>
+    <p class="instrument-desc">Fourteen passages. No names attached. For each: who is speaking, what do they want, what do they believe is true about the world. Answer before the reveal. Reconsider after.</p>
+    <div class="instrument-meta">Baldwin · Simpson × 3 · Lorde × 2 · King · Obama · Columbus · Orange · Questlove · Du Mez · Carney × 2</div>
     <div class="instrument-arrow">Open →</div>
   </a>
-
 </div>
 
-<!-- CORPUS NOTE -->
+<!-- FATALISM ANSWERS -->
+<div class="section-head mt-section"><span class="section-head-label">The Fatalism Problem — Five Answers</span></div>
+<div class="wrap" style="padding-bottom: 0.75rem;">
+  <p style="font-family: var(--sans); font-size: 12.5px; font-weight: 300; color: var(--text-dim); line-height: 1.7; font-style: italic; max-width: 58ch;">The corpus does not end at critique. These are not compatible answers. None resolves the problem completely. All of them are themselves subject to the same analytical scrutiny as everything else in the unit.</p>
+</div>
+<div class="answers-grid">
+  <div class="answer-card"><div class="answer-who">James Baldwin</div><div class="answer-source">The Fire Next Time · 1963</div><div class="answer-text">Dare everything anyway, from love. Not from hope. Not from expectation of success. From love. It is the only ground that does not require the system to cooperate.</div></div>
+  <div class="answer-card"><div class="answer-who">Questlove</div><div class="answer-source">Hip-Hop Is History · epilogue set in 2073</div><div class="answer-text">Breakbeats are evidence of how we were once broken, and I want nothing more than to bring about a healing. The healing is the goal — not the system's approval of the healing.</div></div>
+  <div class="answer-card"><div class="answer-who">Kristin Kobes Du Mez</div><div class="answer-source">Jesus and John Wayne · 2020</div><div class="answer-text">What was once done might also be undone. The structures were built. They can be dismantled. This is not optimism. It is a statement about the contingency of what was made by human choices.</div></div>
+  <div class="answer-card"><div class="answer-who">Leanne Betasamosake Simpson</div><div class="answer-source">As We Have Always Done · 2017</div><div class="answer-text">Our presence is our weapon. The work is internal. We are not begging for recognition. We are the demand. From this standpoint, it doesn't matter who is president.</div></div>
+  <div class="answer-card"><div class="answer-who">Audre Lorde</div><div class="answer-source">Sister Outsider · 1984</div><div class="answer-text">Anger is not hatred. Its object is change. It is a grief of distortions between peers. Guilt preserves ignorance. Anger, used precisely, is the beginning of knowledge.</div></div>
+</div>
+<div class="answers-note">
+  <div class="answers-note-inner">Under what conditions has presence succeeded politically? Can love operate structurally or only interpersonally? When does anger fail to produce change? The corpus offers answers. It does not exempt them from scrutiny.</div>
+</div>
+
+<!-- CORPUS -->
+<div class="section-head mt-section"><span class="section-head-label">The Corpus</span></div>
 <div class="corpus-note">
   <div class="corpus-col">
     <h3>Primary Voices</h3>
@@ -721,13 +468,19 @@
       <li><strong>Coates</strong> — Reparations · BTWAM · Eight Years · The Message</li>
       <li><strong>Simpson</strong> — As We Have Always Done</li>
       <li><strong>Dunbar-Ortiz</strong> — An Indigenous Peoples' History</li>
+      <li><strong>Deloria</strong> — God Is Red</li>
       <li><strong>Anzaldúa</strong> — Borderlands / La Frontera</li>
       <li><strong>Orange</strong> — There There (Prologue)</li>
-      <li><strong>Lorde</strong> — Sister Outsider</li>
+      <li><strong>Lorde</strong> — Sister Outsider (three essays)</li>
       <li><strong>Du Mez</strong> — Jesus and John Wayne</li>
       <li><strong>Nguyen</strong> — The Beautiful, Flawed Fiction</li>
       <li><strong>Bayoumi</strong> — How Does It Feel to Be a Problem?</li>
       <li><strong>Questlove</strong> — Hip-Hop Is History</li>
+      <li><strong>Chang</strong> — Can't Stop Won't Stop</li>
+      <li><strong>Rose</strong> — The Hip Hop Wars</li>
+      <li><strong>Iandoli</strong> — God Save the Queens</li>
+      <li><strong>Said</strong> — Orientalism · Zionism essay</li>
+      <li><strong>Lamya H.</strong> — Hijab Butch Blues</li>
     </ul>
   </div>
   <div class="corpus-col">
@@ -738,22 +491,46 @@
       <li><strong>King</strong> — Letter from Birmingham Jail (1963)</li>
       <li><strong>Obama</strong> — 2004 DNC Keynote</li>
     </ul>
-    <h3 style="margin-top: 1.5rem;">Contemporary Frame</h3>
+    <h3 style="margin-top: 1.5rem;">Musicians & Artists</h3>
+    <ul class="corpus-list">
+      <li><strong>Holiday</strong> — Strange Fruit (1939)</li>
+      <li><strong>Davis (Angela)</strong> — Blues Legacies and Black Feminism</li>
+      <li><strong>Chuck D</strong> — Fight the Power</li>
+      <li><strong>Locke</strong> — The New Negro</li>
+    </ul>
+    <h3 style="margin-top: 1.5rem;">Historical Documents</h3>
+    <ul class="corpus-list">
+      <li><strong>HOLC maps</strong> — redlining, 1935–1940</li>
+      <li><strong>Columbus log</strong> — 1492–95 (Las Casas transcription)</li>
+      <li><strong>Dawes Act</strong> — 1887</li>
+      <li><strong>Massachusetts scalp bounty</strong> — 1694</li>
+    </ul>
+  </div>
+  <div class="corpus-col">
+    <h3>Contemporary Frame</h3>
     <ul class="corpus-list">
       <li><strong>Kagan</strong> — American Democracy / Checkmate in Iran (2025–26)</li>
       <li><strong>Serwer</strong> — Democracy Is a Racial Entitlement Now (2026)</li>
       <li><strong>King Charles III</strong> — Address to Joint Congress (April 2026)</li>
-      <li><strong>V-Dem data</strong> — US reclassified: liberal → electoral democracy</li>
+      <li><strong>Carney</strong> — Davos address (January 2026)</li>
+      <li><strong>V-Dem</strong> — US reclassified: liberal → electoral democracy</li>
+    </ul>
+    <h3 style="margin-top: 1.5rem;">Resistant Interlocutors</h3>
+    <ul class="corpus-list">
+      <li><strong>Havel</strong> — The Power of the Powerless (1978)</li>
+      <li><strong>Rockwell</strong> — The Problem We All Live With (1964)</li>
+    </ul>
+    <h3 style="margin-top: 1.5rem;">Encounter Objects</h3>
+    <ul class="corpus-list">
+      <li><strong>Pryor</strong> — Live on the Sunset Strip (1982)</li>
+      <li><strong>HOLC maps</strong> — Mapping Inequality, U. of Richmond</li>
     </ul>
   </div>
 </div>
 
-<!-- FOOTER -->
 <footer>
-  <div class="footer-left">
-    <strong>Deutsche Schule Prag</strong> · English Department · Abitur 2027–29
-  </div>
-  <div class="footer-right">Every nation has a playbook. The question is what it takes to stop playing.</div>
+  <div class="footer-left"><strong>Deutsche Schule Prag</strong> · English Department · Abitur 2027–29 · Supplementary unit</div>
+  <div class="footer-right">Every nation has a Playbook. The question is what it takes to stop playing.</div>
 </footer>
 
 </body>
