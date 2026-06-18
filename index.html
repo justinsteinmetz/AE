@@ -188,6 +188,47 @@ footer { position: relative; z-index: 1; max-width: var(--max); margin: 0 auto; 
 </head>
 <body>
 
+<!-- ══ OPENING IMAGE ══ -->
+<div style="
+  width: 100%;
+  max-height: 75vh;
+  overflow: hidden;
+  position: relative;
+  display: block;
+">
+  <img
+    src="https://dsl.richmond.edu/panorama/redlining/static/downloads/maps/MI-Detroit.jpg"
+    alt=""
+    style="
+      width: 100%;
+      height: 75vh;
+      object-fit: cover;
+      object-position: center center;
+      display: block;
+    "
+    loading="eager"
+    onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/HOLC_Detroit.jpg/1280px-HOLC_Detroit.jpg'"
+  >
+  <div style="
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 35%;
+    background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.75));
+    pointer-events: none;
+  "></div>
+  <div style="
+    position: absolute;
+    bottom: 2rem; left: 3rem;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.7;
+  ">Home Owners' Loan Corporation · Residential Security Map · Detroit · 1939<br>Green: Best · Blue: Still Desirable · Yellow: Declining · Red: Hazardous<br>National Archives · Public domain</div>
+</div>
+
+
 <a href="https://justinsteinmetz.github.io/DSP_English_Hub/" class="back-link">DSP English Hub</a>
 
 <!-- MASTHEAD -->
@@ -198,7 +239,7 @@ footer { position: relative; z-index: 1; max-width: var(--max); margin: 0 auto; 
   <p class="masthead-rule">
     America may be <strong>the most successful national story ever told.</strong>
     This unit asks what it costs to maintain it — and where the same story
-    is running <em>closer to home.</em>
+    is running <em>closer to home.</em> It also asks where the framework for seeing that breaks down.
   </p>
   <div class="masthead-meta">
     <span>Six plays</span>
@@ -224,11 +265,11 @@ footer { position: relative; z-index: 1; max-width: var(--max); margin: 0 auto; 
 <!-- SIX PHASES -->
 <div class="section-head"><span class="section-head-label">The Unit — Six Phases</span></div>
 <div class="shape-grid">
-  <div class="shape-card"><div class="shape-num">Phase 1</div><div class="shape-name">The Myth Machine</div><p class="shape-q">What does America claim to be? Why did people believe it?</p></div>
-  <div class="shape-card"><div class="shape-num">Phase 2</div><div class="shape-name">The Founding Contradiction</div><p class="shape-q">What did the claim cost? Who paid?</p></div>
-  <div class="shape-card"><div class="shape-num">Phase 3</div><div class="shape-name">Westward, Into Someone Else's Home</div><p class="shape-q">What was taken? What framework can see what was lost?</p></div>
-  <div class="shape-card"><div class="shape-num">Phase 4</div><div class="shape-name">The American Dream, Priced Out</div><p class="shape-q">Who built the Dream? Who was excluded from it?</p></div>
-  <div class="shape-card"><div class="shape-num">Phase 5</div><div class="shape-name">The Mirror Turns</div><p class="shape-q">Where do these moves run in Europe? What are they protecting?</p></div>
+  <div class="shape-card"><div class="shape-num">Phase 1</div><div class="shape-name">The Myth Machine</div><p class="shape-q">What does America claim to be? Why did people believe it?</p><p class="shape-q" style="font-size:0.75rem; opacity:0.5; margin-top:0.5rem; font-style:italic;">What does the framework miss here?</p></div>
+  <div class="shape-card"><div class="shape-num">Phase 2</div><div class="shape-name">The Founding Contradiction</div><p class="shape-q">What did the claim cost? Who paid?</p><p class="shape-q" style="font-size:0.75rem; opacity:0.5; margin-top:0.5rem; font-style:italic;">What does the framework miss here?</p></div>
+  <div class="shape-card"><div class="shape-num">Phase 3</div><div class="shape-name">Westward, Into Someone Else's Home</div><p class="shape-q">What was taken? What framework can see what was lost?</p><p class="shape-q" style="font-size:0.75rem; opacity:0.5; margin-top:0.5rem; font-style:italic;">What does the framework miss here?</p></div>
+  <div class="shape-card"><div class="shape-num">Phase 4</div><div class="shape-name">The American Dream, Priced Out</div><p class="shape-q">Who built the Dream? Who was excluded from it?</p><p class="shape-q" style="font-size:0.75rem; opacity:0.5; margin-top:0.5rem; font-style:italic;">What does the framework miss here?</p></div>
+  <div class="shape-card"><div class="shape-num">Phase 5</div><div class="shape-name">The Mirror Turns</div><p class="shape-q">Where do these moves run in Europe? What are they protecting?</p><p class="shape-q" style="font-size:0.75rem; opacity:0.5; margin-top:0.5rem; font-style:italic;">What does the framework miss here?</p></div>
   <div class="shape-card"><div class="shape-num">Phase 6</div><div class="shape-name">Exceptionablism</div><p class="shape-q">What does the framework illuminate? Where does it fail?</p></div>
 </div>
 
@@ -262,7 +303,7 @@ footer { position: relative; z-index: 1; max-width: var(--max); margin: 0 auto; 
 </div>
 <div class="claim-note">
   <div class="claim-note-inner">
-    These texts are encountered <strong>before</strong> the framework. The claim must be felt before it is analysed. Students who encounter the critique first will never understand why the gap between promise and reality is a tragedy rather than simply a structural observation.
+    These texts are encountered <strong>before</strong> the framework. The claim must be felt before it is analysed. Students who encounter the critique first will never understand why the gap between promise and reality is a tragedy rather than simply a structural observation. <strong>Encounter 8 teaches how frameworks fail. Encounter 10 shows one failing.</strong> The encounters are the unit's safeguard against its own certainty.
   </div>
 </div>
 
@@ -274,8 +315,7 @@ footer { position: relative; z-index: 1; max-width: var(--max); margin: 0 auto; 
     <div class="move-number">Play 1</div>
     <div class="move-name">The Origin Story</div>
     <div class="move-tagline">The move that establishes the claim.</div>
-    <p class="move-desc">Every exceptional nation encodes its aspiration into its founding — so any gap between ideal and reality can always be framed as a failure of people, not of the system.</p>
-    <div class="move-example"><em>Jefferson writes that all men are created equal. Jefferson enslaves over 600 people across his lifetime. The system survives by treating this as irony rather than structure.</em></div>
+    <p class="move-desc">The gap between the ideal and the reality is not a bug. It is load-bearing.</div>
     <span class="move-signal">"We hold these truths to be self-evident"</span>
   </div>
 
@@ -283,8 +323,7 @@ footer { position: relative; z-index: 1; max-width: var(--max); margin: 0 auto; 
     <div class="move-number">Play 2</div>
     <div class="move-name">The Necessary Exclusion</div>
     <div class="move-tagline">The myth requires someone outside it.</div>
-    <p class="move-desc">The freedom of some is produced by the unfreedom of others. The position rotates. The requirement does not. The body changes. The mechanism does not.</p>
-    <div class="move-example"><em>The GI Bill rebuilt the American middle class after 1945. Black veterans were systematically denied its benefits. The wealth gap it created has not closed in 80 years.</em></div>
+    <p class="move-desc">The freedom of some requires the unfreedom of others. The structure remains.</div>
     <span class="move-signal">"They didn't mean people like us"</span>
   </div>
 
@@ -292,13 +331,7 @@ footer { position: relative; z-index: 1; max-width: var(--max); margin: 0 auto; 
     <div class="move-number">Play 3</div>
     <div class="move-name">The Erasure</div>
     <div class="move-tagline">The move that maintains the story against the facts.</div>
-    <p class="move-desc">Evidence that contradicts the myth disappears, is minimised, or is reframed as exceptional. Each instance is treated as an isolated incident. The accumulation of exceptions is never allowed to become a pattern.</p>
-    <div class="redacted-block" title="This content has been removed.">
-      <span class="redacted-line"></span>
-      <span class="redacted-line"></span>
-      <span class="redacted-line"></span>
-      <span class="redacted-line"></span>
-      <div class="redacted-label">This content has been removed.</div>
+    <p class="move-desc">Each contradiction is treated as isolated. The pattern is never named.</div>
     </div>
     <span class="move-signal">"This was an isolated incident"</span>
   </div>
@@ -307,8 +340,7 @@ footer { position: relative; z-index: 1; max-width: var(--max); margin: 0 auto; 
     <div class="move-number">Play 4</div>
     <div class="move-name">The Backlash</div>
     <div class="move-tagline">Dissent becomes disloyalty.</div>
-    <p class="move-desc">When the Necessary Exclusion becomes visible, the pattern shifts to direct suppression. The Backlash does not engage with the critique. It reframes the challenge as an attack — using the language of the Origin Story to do so.</p>
-    <div class="move-example"><em>The Backlash is not triggered by Black failure. It is triggered by Black success. Du Bois: "If there was one thing that South Carolina feared more than bad Negro government, it was good Negro government."</em></div>
+    <p class="move-desc">The Backlash does not engage the critique. It delegitimises the critic.</div>
     <span class="move-signal">"This is not who we are" / "They are trying to destroy our way of life"</span>
   </div>
 
@@ -316,7 +348,7 @@ footer { position: relative; z-index: 1; max-width: var(--max); margin: 0 auto; 
     <div class="move-number">Play 5A / 5B</div>
     <div class="move-name">The Co-optation</div>
     <div class="move-tagline">The wound becomes the product — or something genuinely changes.</div>
-    <p class="move-desc">When the Backlash fails, the pattern absorbs the critique. <strong style="font-weight:400; color:var(--text)">5A:</strong> the language survives, the structural argument does not. <strong style="font-weight:400; color:var(--text)">5B:</strong> reform materially redistributes power in durable ways. These are competing interpretations. The evidence decides. Not all inclusion is co-optation.</p>
+    <p class="move-desc">The language survives. The structural argument does not.</p>
     <div class="move-example"><em>Chuck D: hip hop is the CNN of Black people. By 1997: "more famous, less powerful." But legal segregation ended — that was material change. Both things are true simultaneously.</em></div>
     <span class="move-signal">"We hear you" / "Not all inclusion is co-optation"</span>
   </div>
@@ -327,11 +359,11 @@ footer { position: relative; z-index: 1; max-width: var(--max); margin: 0 auto; 
     <div class="move-tagline">The same moves, running closer to home.</div>
     <div class="mirror-inner">
       <div>
-        <p class="move-desc">You have learned to identify Moves 1–5 in American history. Move 6 requires you to identify them in Europe. Not to prove Europe is worse. To prove these moves are not uniquely American.</p>
-        <p class="mirror-question">Brexit. The Windrush generation. France's laïcité. Orbán's Hungary. Vance in Budapest, April 2026. The greengrocer putting the sign in the window. <em>Where does this Play run — and what is it protecting?</em></p>
+        <p class="move-desc">Not to prove Europe is worse. To prove these moves are not uniquely American.</p>
+        <p class="mirror-question">Brexit. The Windrush generation. France's laïcité. Orbán's Hungary. Vance in Budapest, April 2026. The NGO that adopted the language of liberation and became a donor management system. The diversity initiative that renamed the hierarchy. The greengrocer putting the sign in the window. <em>Where does this Play run — and what is it protecting?</em></p>
       </div>
       <div>
-        <p class="move-desc" style="color: var(--text-dim); font-style: italic;">It is what nations do. The question is not which nation plays it worst. The question is what it takes to stop playing.</p>
+        <p class="move-desc" style="color: var(--text-dim); font-style: italic;">The question is not which nation plays it worst. The question is what it takes to stop playing.</p>
         <p class="move-desc" style="margin-top: 1rem; color: var(--text-dim);">Mark Carney, Davos, January 2026 — one year into Trump's second term: "We placed the sign in the window. We participated in the rituals." Every nation has a set of moves. The question is what it takes to take the sign down.</p>
         <span class="move-signal" style="margin-top: 1rem;">"We're different" / "We placed the sign in the window"</span>
       </div>
@@ -343,7 +375,7 @@ footer { position: relative; z-index: 1; max-width: var(--max); margin: 0 auto; 
 <div class="rule-bar">
   <div class="rule-block">
     <span class="rule-label">The Rule</span>
-    <span class="rule-text"><strong>Every Move you identify in American history must be turned toward Europe.</strong> These moves do not belong to America. This is not a unit about American pathology. It is a unit about the Western project and the myth structures that sustain it.</span>
+    <span class="rule-text"><strong>Every Move you identify in American history must be turned toward Europe.</strong> These moves do not belong to America alone.</span>
   </div>
 </div>
 
@@ -359,36 +391,31 @@ footer { position: relative; z-index: 1; max-width: var(--max); margin: 0 auto; 
     <div class="territory-geo">The American Continent</div>
     <div class="territory-name">Settler colonialism as structure</div>
     <div class="territory-source">Dunbar-Ortiz · Deloria · Simpson · Orange</div>
-    <p class="territory-desc">This is not an episode in American history. It is the organising principle. The scalp bounty economy. Terra nullius. Firsting and lasting — the Erasure built into the grammar of historical description itself.</p>
-    <div class="territory-play">Moves 1, 2, 3 — settler colonial infrastructure</div>
+    <p class="territory-desc">The scalp bounty economy. Terra nullius. The founding violence that makes the Dream possible.</div>
   </div>
   <div class="territory-card">
     <div class="territory-geo">The US–Mexico Border</div>
     <div class="territory-name">The open wound</div>
     <div class="territory-source">Gloria Anzaldúa — Borderlands / La Frontera</div>
-    <p class="territory-desc">Not a legal line but a bodily experience. The labour cycle, the language that refuses to stay on one side, the identity that refuses the binary the border imposes. The Necessary Exclusion requires a geography.</p>
-    <div class="territory-play">Play 2 — the Exclusion made spatial and bodily</div>
+    <p class="territory-desc">The labour cycle, the identity that is both asset and threat. The hyphen.</div>
   </div>
   <div class="territory-card">
     <div class="territory-geo">The American City</div>
     <div class="territory-name">The wealth gap as policy outcome</div>
     <div class="territory-source">Coates — The Case for Reparations</div>
-    <p class="territory-desc">Redlining. Contract buying. The specific dollar amounts of wealth extracted from specific families on specific streets. The American Dream measured in mortgage denial rates and intergenerational wealth.</p>
-    <div class="territory-play">Plays 3 and 4 in sequence</div>
+    <p class="territory-desc">Redlining. Contract buying. The specific dollar amounts extracted from specific families on specific streets.</div>
   </div>
   <div class="territory-card">
     <div class="territory-geo">Palestine</div>
-    <div class="territory-name">Where the corpus goes</div>
+    <div class="territory-name">Where the framework travels</div>
     <div class="territory-source">Said — Orientalism · Coates — The Message</div>
-    <p class="territory-desc">This territory is here because Coates goes there himself in The Message, and Said's knowledge/power apparatus connects the American and Palestinian experiences directly. The corpus follows its primary voices, not a geopolitical agenda.</p>
-    <div class="territory-play">Plays 1 and 3 — terra nullius applied; Origin Story requires prior Erasure</div>
+    <p class="territory-desc">Where the American case meets a different colonial history. What the framework explains. What it doesn't.</div>
   </div>
   <div class="territory-card framing">
     <div class="territory-geo">The Mechanism</div>
     <div class="territory-name">Why these moves travel</div>
     <div class="territory-source">Kagan — American Democracy / Checkmate in Iran · 2025–26</div>
-    <p class="territory-desc">Robert Kagan — an architect of American exceptionalism — watches the machine behave in ways he cannot control. His June 2025 piece warns about Iran. By May 2026 it has happened. The machine does not need its operators' intentions. This is what structural tendency means. The pattern runs whether or not anyone is calling the moves.</p>
-    <div class="territory-play">The mechanism documented by one of its architects — the strongest possible evidence for the structural argument</div>
+    <p class="territory-desc">Robert Kagan watches the machine he helped build behave in ways he cannot control.</div>
   </div>
 </div>
 
@@ -401,18 +428,20 @@ footer { position: relative; z-index: 1; max-width: var(--max); margin: 0 auto; 
 <!-- ENCOUNTER LESSONS -->
 <div class="section-head mt-section"><span class="section-head-label">Encounter — Before the Framework</span></div>
 <div class="wrap" style="padding-bottom: 0.75rem;">
-  <p style="font-family: var(--sans); font-size: 12.5px; font-weight: 300; color: var(--text-dim); line-height: 1.7; font-style: italic; max-width: 58ch;">Nine conversation lessons. Each built around one object. The framework does not arrive until students have spent time inside the specific historical case. The teacher does not synthesise. The lesson does not culminate in a correct answer.</p>
+  <p style="font-family: var(--sans); font-size: 12.5px; font-weight: 300; color: var(--text-dim); line-height: 1.7; font-style: italic; max-width: 58ch;">Ten conversation lessons. Each built around one object. The framework does not arrive until students have spent time inside the specific historical case. The teacher does not synthesise. The lesson does not culminate in a correct answer.</p>
 </div>
 <div class="encounter-grid">
-  <div class="encounter-card"><div class="encounter-num">Lesson 1</div><div class="encounter-name">The Sign in the Window</div><div class="encounter-object">Havel via Carney · Davos · January 2026</div><div class="encounter-prov">What signs do you put in the window?</div></div>
-  <div class="encounter-card"><div class="encounter-num">Lesson 2</div><div class="encounter-name">This Was Just a Test</div><div class="encounter-object">Tommy Orange — There There prologue</div><div class="encounter-prov">Name something you have seen so many times you stopped seeing it.</div></div>
-  <div class="encounter-card"><div class="encounter-num">Lesson 3</div><div class="encounter-name">What Does This Person Want?</div><div class="encounter-object">Lincoln — Second Inaugural, read cold</div><div class="encounter-prov">Is this a hopeful speech or a grief speech? Can it be both?</div></div>
-  <div class="encounter-card"><div class="encounter-num">Lesson 4</div><div class="encounter-name">The Map and the House</div><div class="encounter-object">HOLC redlining map · assessors' notes · 1938</div><div class="encounter-prov">This map was made by people doing their jobs. What does that mean?</div></div>
-  <div class="encounter-card"><div class="encounter-num">Lesson 5</div><div class="encounter-name">What Comedy Knows</div><div class="encounter-object">Richard Pryor — Live on the Sunset Strip · 1982</div><div class="encounter-prov">Is there something you can only say as a joke?</div></div>
-  <div class="encounter-card"><div class="encounter-num">Lesson 6</div><div class="encounter-name">The Greengrocer's Interior</div><div class="encounter-object">Václav Havel — The Power of the Powerless · 1978</div><div class="encounter-prov">Are you living within any lies right now?</div></div>
-  <div class="encounter-card"><div class="encounter-num">Lesson 7</div><div class="encounter-name">The Practices</div><div class="encounter-object">Leanne Simpson — Binoojiinh and the maple sugar</div><div class="encounter-prov">What do you know that you did not learn in a classroom?</div></div>
-  <div class="encounter-card"><div class="encounter-num">Lesson 8</div><div class="encounter-name">The Framework and You</div><div class="encounter-object">Self-awareness note · what the framework costs</div><div class="encounter-prov">What would it mean to hold this framework lightly?</div></div>
-  <div class="encounter-card"><div class="encounter-num">Lesson 9</div><div class="encounter-name">The Same Thing?</div><div class="encounter-object">Columbus log 1492 · HOLC assessors' notes 1938 · side by side</div><div class="encounter-prov">What would it change — practically, not analytically — if these were the same thing?</div></div>
+  <a href="https://justinsteinmetz.github.io/encounters/encounter-1-sign-in-window.html" target="_blank" rel="noopener noreferrer" class="encounter-card"><div class="encounter-num">Lesson 1</div><div class="encounter-name">The Sign in the Window</div><div class="encounter-object">Havel via Carney · Davos · January 2026</div><div class="encounter-prov">What signs do you put in the window?</div></a>
+  <a href="https://justinsteinmetz.github.io/encounters/encounter-2-just-a-test.html" target="_blank" rel="noopener noreferrer" class="encounter-card"><div class="encounter-num">Lesson 2</div><div class="encounter-name">This Was Just a Test</div><div class="encounter-object">Tommy Orange — There There prologue</div><div class="encounter-prov">Name something you have seen so many times you stopped seeing it.</div></a>
+  <a href="https://justinsteinmetz.github.io/encounters/encounter-3-what-does-this-person-want.html" target="_blank" rel="noopener noreferrer" class="encounter-card"><div class="encounter-num">Lesson 3</div><div class="encounter-name">What Does This Person Want?</div><div class="encounter-object">Lincoln — Second Inaugural, read cold</div><div class="encounter-prov">Is this a hopeful speech or a grief speech? Can it be both?</div></a>
+  <a href="https://justinsteinmetz.github.io/encounters/encounter-4-map-and-house.html" target="_blank" rel="noopener noreferrer" class="encounter-card"><div class="encounter-num">Lesson 4</div><div class="encounter-name">The Map and the House</div><div class="encounter-object">HOLC redlining map · assessors' notes · 1938</div><div class="encounter-prov">This map was made by people doing their jobs. What does that mean?</div></a>
+  <a href="https://justinsteinmetz.github.io/encounters/encounter-5-what-comedy-knows.html" target="_blank" rel="noopener noreferrer" class="encounter-card"><div class="encounter-num">Lesson 5</div><div class="encounter-name">What Comedy Knows</div><div class="encounter-object">Richard Pryor — Live on the Sunset Strip · 1982</div><div class="encounter-prov">Is there something you can only say as a joke?</div></a>
+  <a href="https://justinsteinmetz.github.io/encounters/encounter-6-greengrocers-interior.html" target="_blank" rel="noopener noreferrer" class="encounter-card"><div class="encounter-num">Lesson 6</div><div class="encounter-name">The Greengrocer&#x27;s Interior</div><div class="encounter-object">Václav Havel — The Power of the Powerless · 1978</div><div class="encounter-prov">Are you living within any lies right now?</div></a>
+  <a href="https://justinsteinmetz.github.io/encounters/encounter-7-the-practices.html" target="_blank" rel="noopener noreferrer" class="encounter-card"><div class="encounter-num">Lesson 7</div><div class="encounter-name">The Practices</div><div class="encounter-object">Leanne Simpson — Binoojiinh and the maple sugar</div><div class="encounter-prov">What do you know that you did not learn in a classroom?</div></a>
+  <a href="https://justinsteinmetz.github.io/encounters/encounter-8-framework-and-you.html" target="_blank" rel="noopener noreferrer" class="encounter-card"><div class="encounter-num">Lesson 8</div><div class="encounter-name">The Framework and You</div><div class="encounter-object">Self-awareness note · what the framework costs</div><div class="encounter-prov">What would it mean to hold this framework lightly?</div></a>
+  <a href="https://justinsteinmetz.github.io/encounters/encounter-9-the-same-thing.html" target="_blank" rel="noopener noreferrer" class="encounter-card"><div class="encounter-num">Lesson 9</div><div class="encounter-name">The Same Thing?</div><div class="encounter-object">Columbus log 1492 · HOLC assessors' notes 1938 · side by side</div><div class="encounter-prov">What would it change — practically, not analytically — if these were the same thing?</div></a>
+  <a href="https://justinsteinmetz.github.io/encounters/encounter-10-wrong-framework.html" target="_blank" rel="noopener noreferrer" class="encounter-card"><div class="encounter-num">Lesson 10</div><div class="encounter-name">The Wrong Framework</div><div class="encounter-object">Berlin Wall · November 9, 1989 · 18:53</div><div class="encounter-prov">Why didn't the framework work here?</div></div>
+</a>
 </div>
 
 <!-- INSTRUMENTS -->
@@ -421,29 +450,26 @@ footer { position: relative; z-index: 1; max-width: var(--max); margin: 0 auto; 
   <a href="https://justinsteinmetz.github.io/document-sorter/" target="_blank" rel="noopener noreferrer" class="instrument-card">
     <div class="instrument-phase">Phases 2–3</div>
     <div class="instrument-name">Document Sorter</div>
-    <p class="instrument-desc">Eighteen primary source excerpts. No labels, no dates, no context — yet. Drag them into groups. Name the groups yourself. Then find out what they are and revise.</p>
-    <div class="instrument-meta">Encomienda grants · HOLC redlining · corporate DEI · land acknowledgements · scalp bounties · 1492–2021</div>
+    <p class="instrument-desc">Eighteen primary sources. No labels. Drag into groups. Name them. Then the reveal.</div>
     <div class="instrument-arrow">Open →</div>
   </a>
   <a href="https://justinsteinmetz.github.io/stress-tester/" target="_blank" rel="noopener noreferrer" class="instrument-card">
     <div class="instrument-phase">Phases 4–5</div>
     <div class="instrument-name">Co-optation or Transformation?</div>
-    <p class="instrument-desc">Five historical cases. For each: argue co-optation (5A), argue transformation (5B), weigh the evidence, position yourself on the spectrum. See where the class lands. The framework must be able to lose.</p>
-    <div class="instrument-meta">Civil Rights Act · marriage equality · Obama presidency · land acknowledgements · corporate DEI</div>
+    <p class="instrument-desc">Five historical cases. Co-optation or transformation? Weigh the evidence.</div>
     <div class="instrument-arrow">Open →</div>
   </a>
   <a href="https://justinsteinmetz.github.io/testimony-sorter/" target="_blank" rel="noopener noreferrer" class="instrument-card">
     <div class="instrument-phase">Phases 2–4</div>
     <div class="instrument-name">Testimony Sorter</div>
-    <p class="instrument-desc">Fourteen passages. No names attached. For each: who is speaking, what do they want, what do they believe is true about the world. Answer before the reveal. Reconsider after.</p>
-    <div class="instrument-meta">Baldwin · Simpson × 3 · Lorde × 2 · King · Obama · Columbus · Orange · Questlove · Du Mez · Carney × 2</div>
+    <p class="instrument-desc">Fourteen passages. No names. Who is speaking? What do they want?</div>
     <div class="instrument-arrow">Open →</div>
   </a>
 
   <a href="https://justinsteinmetz.github.io/GodAndMammon/" target="_blank" rel="noopener noreferrer" class="instrument-card" style="border-left: 3px solid var(--gold); grid-column: 1 / -1;">
     <div class="instrument-phase">Phases 2–5 · Faith, Power, Nation</div>
     <div class="instrument-name">God and Mammon</div>
-    <p class="instrument-desc">Five instruments and a coda on American Christianity as technology — for producing compliance, justifying conquest, sanctifying racial hierarchy, and reproducing political power. Students work as editors, historians, ceremony attendees, genealogists, and witnesses. The coda asks whether any of it worked.</p>
+    <p class="instrument-desc">Five instruments and a coda. The coda asks whether any of it worked.</p>
     <div class="instrument-meta">Slave Bible 1807 · O'Sullivan 1839 · Cherokee Nation 1830 · Julian Carr 1913 · Billy Sunday 1917 · Promise Keepers 1993 · Project 2025 · Exodus</div>
     <div class="instrument-arrow">Enter the strand →</div>
   </a>
